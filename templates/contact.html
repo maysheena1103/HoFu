@@ -1,0 +1,208 @@
+	<link rel="stylesheet" type="text/css" href="css/FrontEnd/stylesheets/contact.css">
+	<div class="middle">
+		<div class="banner">
+			<img class="bann_img" src="images/contact_44.png">
+		</div>
+		<!-- banner end -->
+<style>
+::-webkit-input-placeholder { /* WebKit browsers */
+    color:    #000;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    #000;
+   opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    #000;
+   opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+   color:    #000;
+}
+</style>
+		<form id="contactForm" name="contactForm" method="POST" action="">
+		<input type="hidden" name="mode" value="add" />
+		<div class="yellow">
+			<div class="colo_box wrapper">
+				<div class="til">
+					<div class="spacer"></div>
+					<div class="float">CONACT US</div>
+					<div class="size float">聯絡我們</div>
+					<div class="tag float_r">
+						<{$init.path}>
+					</div>
+					<div class="spacer"></div>
+				</div>
+				<table>
+					<tr>
+						<td>
+							<input class="input" type="text" name="company" id="company" value="<{$data.record.company}>" placeholder="公司名稱" />
+						</td>
+						<td>
+							<input style="margin-left:35px;" class="input" type="text" name="tel" id="tel" value="<{$data.record.tel}>" placeholder="公司電話" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input class="input" type="text" name="sendname" id="sendname" value="<{$data.record.sendname}>" placeholder="聯絡姓名" />
+						</td>
+						<td>
+							<input style="margin-left:35px;" class="input" type="text" name="email" id="email" value="<{$data.record.email}>" placeholder="聯絡信箱" />
+						</td>
+					</tr>
+				</table>
+				<div class="check">
+					<div class="spacer"></div>
+					<div class="ck_me float">詢問內容</div>
+					<div class="chek_b float">
+						<label>
+						<img src="images/contact_72.png" height="62" width="62"><br>
+						帳款問題<br>
+						<input type="checkbox" name="type[]" value="帳款問題"/>
+						</label>
+					</div>
+					<div class="chek_b float">
+						<label>
+						<img src="images/contact_74.png" height="62" width="62"><br>
+						印刷問題<br>
+						<input type="checkbox" name="type[]" value="印刷問題"/>
+						</label>
+					</div>
+					<div class="chek_b float">
+						<label>
+						<img src="images/contact_77.png" height="62" width="62"><br>
+						詢價業務<br>
+						<input type="checkbox" name="type[]" value="詢價業務"/>
+						</label>
+					</div>
+					<div class="chek_b float">
+						<label>
+						<img src="images/contact_79.png" height="62" width="62"><br>
+						檔案問題<br>
+						<input type="checkbox" name="type[]" value="檔案問題"/>
+						</label>
+					</div>
+					<div class="chek_b float">
+						<label>
+						<img src="images/contact_81.png" height="62" width="62"><br>
+						其它問題<br>
+						<input type="checkbox" name="type[]" value="其它問題"/>
+						</label>
+					</div>
+					<div class="spacer"></div>
+				</div>
+				<table class="mem_td">
+					<tr>
+						<td>
+							<input class="input meam" type="text" name="title" id="title" value="<{$data.record.title}>" placeholder="標          題" />
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>
+							<textarea class="input meam_a" name="message" id="message" placeholder="內          容"><{$data.record.message}></textarea>
+						</td>
+						<td class="inf">
+							70846台南市安平區民權路4段79號
+							<div class="lb_a">
+								NO.79, SEC. 4, MINQUAN RD., ANPING DIST., TAINAN CITY 70846, TAIWAN (R.O.C.)
+							</div>
+							<div class="lb">
+								TEL： +886-6-259-1851
+							</div>
+							<div class="lb">
+								FAX：+886-6-358-6591
+							</div>
+							<div class="lb" style="border:none;letter-spacing: -0.4px;">
+								非常感謝您的留言，我們將會盡速請專人與您聯絡。
+							</div>
+							<button onClick="javascript: checkContactForm();return false;">確認送出</button>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		</form>
+		<!-- yellow end -->
+		<div class="pink">
+			<div class="colo_box wrapper">
+				<div class="til">
+					<div class="spacer"></div>
+					<div class="float">GOOGLE MAP</div>
+					<div class="size float">地圖指引</div>
+					<div class="spacer"></div>
+				</div>
+				<div class="google_map">
+					<iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3672.6737868599994!2d120.1862092!3d22.999020200000004!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346e766c72af0f2f%3A0xe76d6fac294f6ada!2zNzAw5Y-w5Y2X5biC5Lit6KW_5Y2A5rCR5qyK6Lev5Zub5q61NznomZ8!5e0!3m2!1szh-TW!2stw!4v1429530209690" width="1264" height="625"></iframe>
+				</div>
+			</div>
+		</div>
+		<!-- pink end -->
+		
+	</div>
+	<!-- middle end -->
+<script>
+var sysMessage = '<{$init.message}>';
+(function(){
+	// 重新載入圖形的函數，適用於任何圖形	
+	var reloadImg = function(dImg) {
+	     // 取得圖形原本的來源 url
+	     var sOldUrl = dImg.src;
+	
+	     // 在原本的 url 後面加上亂數的參數，變成新的 url
+	     var sNewUrl = sOldUrl + "?rnd=" + Math.random();
+	
+	    //將圖形的來源改為新的 url，就會重新載入圖形了
+	     dImg.src = sNewUrl;
+	};
+	
+	// 取得重新載入的超連結元素
+	var dReloadLink = document.getElementById("reload-img");
+	
+	// 取得驗證碼圖形元素
+	var dImg = document.getElementById("rand-img");
+	
+	// 定義這個超連結的 onclick 事件
+	dReloadLink.onclick = function(e) {
+	      // 呼叫函數重新載入驗證碼圖形
+	      reloadImg(dImg);
+	      //停止事件預設的動作，也就是不要跳到超連結的網址
+	      if(e) e.preventDefault();
+	      return false;	
+	};
+})();
+function checkContactForm(){
+	var message = '';
+	if(document.getElementById('company').value.length == 0){
+		message += '※請輸入公司名稱\r\n';
+	}
+	if(document.getElementById('tel').value.length == 0){
+		message += '※請輸入公司電話\r\n';
+	}
+	if(document.getElementById('sendname').value.length == 0){
+		message += '※請輸入聯絡姓名\r\n';
+	}
+	if(document.getElementById('email').value.length == 0){
+		message += '※請輸入聯絡信箱\r\n';
+	}
+	if(document.getElementById('title').value.length == 0){
+		message += '※請輸入標題\r\n';
+	}
+	if(document.getElementById('message').value.length == 0){
+		message += '※請輸入留言內容\r\n';
+	}
+	
+	if(message == ''){
+		document.contactForm.submit();
+	}else{
+		alert(message);
+	}
+}
+$(document).ready(
+function(){
+	if(sysMessage != ''){
+		alert(sysMessage);
+	}
+}
+);
+</script>

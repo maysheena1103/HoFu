@@ -1,0 +1,246 @@
+<link href="<{$smarty.const.WEB_ACSS}>inside_style.css" rel="stylesheet" type="text/css" />
+<link href="<{$smarty.const.WEB_ACSS}>tab_style.css" rel="stylesheet" type="text/css" />
+<link href="<{$smarty.const.WEB_ACSS}>btn_style.css" rel="stylesheet" type="text/css" />
+<link href="<{$smarty.const.WEB_ACSS}>table_style.css" rel="stylesheet" type="text/css" />
+<link type="text/css" href="<{$smarty.const.WEB_CSS}>custom-theme/jquery-ui-1.8.16.custom.css" rel="stylesheet" />
+<script type="text/javascript" src="<{$smarty.const.WEB_JS}>jquery-ui-1.8.16.custom.min.js"></script>
+<script type="text/javascript" src="<{$smarty.const.WEB_JS}>ui/i18n/jquery.ui.datepicker-zh-TW.js"></script>
+<script type="text/javascript">
+	$(function(){
+		// Datepicker
+		$('#birthday').datepicker({
+			inline: true,
+			changeYear: true,
+			yearRange: "-100:+0",
+			dateFormat:"yy-mm-dd",
+			defaultDate : '<{$data.record.birthday}>'
+		});
+	});
+</script>
+            <div id="content">
+                <div class="section">
+                    <div class="box_style_01" style="width:100%">
+                        <div class="top">
+                            <div class="right_bg">
+                                <div class="title"><h2><{$init.optionAry[$init.op].0.menu_title}></h2></div>
+                            </div>
+                        </div><!--end .top //-->
+                        
+                        <div class="mid">
+                            <div class="left_bg">
+                                <div class="right_bg">
+                                    <div class="main_content">
+                                        <div class="tabs_1">
+                                            <ul>
+											<{foreach from=$init.optionAry[$init.op] key=subk item=subv}>
+											<{if $subk > 0}>
+                                                <li><a href="index.php?op=<{$init.op}>&sub=<{$subv.menu_tag}>" <{if $init.sub == $subv.menu_tag}>class="selected"<{/if}>><h3><{$subv.menu_title}></h3></a></li>
+											<{/if}>
+											<{/foreach}>
+                                            </ul>
+                                        </div><!--end .tabs_1 //-->
+										
+                                        <form name="addFrm" method="POST" action="" enctype="multipart/form-data">
+										<input type="hidden" name="mode" value="editPost" />
+										<input type="hidden" name="id" value="<{$init.id}>" />
+                                        <div class="inside_section" style="padding-bottom:10px"><span style="color:#F36; font-size:13px;">*星號表示必填項目</span></div><!--end .inside_section //-->
+                                        <div class="inside_section">
+                                            <div class="table_style_01">
+                                                <table border="0" cellspacing="0" cellpadding="0">
+                                                  <tr>
+                                                    <th><span style="color:#F36;">*</span>會員帳號：</th>
+                                                    <td>
+                                                        <input type="text" id="username" name="username" style="width:300px;font-size:24px;" onBlur="checkUser();" maxlength="32" value="<{$data.record.username}>" /> (32字元)
+														<span id="userText" class="check_infor"></span>
+                                                    </td>
+                                                  </tr>
+                                                  <tr>
+                                                    <th><span style="color:#F36;">*</span>會員密碼<{if $init.id > 0}>(可略過)<{/if}>：</th>
+                                                    <td>
+                                                        <input type="password" id="password" name="password" style="width:300px;font-size:24px;" maxlength="20" />(6~20字元)
+                                                    </td>
+                                                  </tr>
+												  <tr>
+                                                    <th><span style="color:#F36;">*</span>密碼確認：</th>
+                                                    <td>
+                                                        <input type="password" id="password2" name="password2" style="width:300px;font-size:24px;" maxlength="20" />
+                                                    </td>
+                                                  </tr>
+												  <tr>
+                                                    <th></th>
+                                                    <td>
+                                                        <font color="#c40000"><b>若不修改密碼，請勿在密碼欄位填入資訊</b></font>
+                                                    </td>
+                                                  </tr>
+                                                  <tr>
+                                                    <th><span style="color:#F36;">*</span>負責人：</th>
+                                                    <td>
+                                                        <input type="text" id="truename" name="truename" style="width:300px;font-size:24px;" maxlength="16" value="<{$data.record.truename}>" /> (16字元)
+                                                    </td>
+                                                  </tr>
+												  <tr>
+                                                    <th><span style="color:#F36;">*</span>公司住址：</th>
+                                                    <td>
+														<div id="twzipcode"></div>
+                                                        <input type="text" name="address" id="address" size="40" style="font-size:24px;" value="<{$data.record.address}>" />
+                                                    </td>
+                                                  </tr>
+												  <tr>
+                                                    <th><span style="color:#F36;">*</span>電子信箱：</th>
+                                                    <td>
+                                                        <input type="text" id="email" name="email" style="width:600px;font-size:24px;" maxlength="64" value="<{$data.record.email}>" /> (64字元)
+                                                    </td>
+                                                  </tr>
+												  <tr>
+                                                    <th><span style="color:#F36;">*</span>公司電話：</th>
+                                                    <td>
+                                                        <input type="text" id="tel" name="tel" style="width:600px;font-size:24px;" maxlength="32" value="<{$data.record.tel}>" /> (32字元)
+                                                    </td>
+                                                  </tr>
+												  <tr>
+                                                    <th><span style="color:#F36;"></span>傳真電話：</th>
+                                                    <td>
+                                                        <input type="text" id="fax" name="fax" style="width:600px;font-size:24px;" maxlength="32" value="<{$data.record.fax}>" /> (32字元)
+                                                    </td>
+                                                  </tr>
+												  <tr>
+                                                    <th><span style="color:#F36;"></span>稿件聯絡人：</th>
+                                                    <td>
+                                                        <input type="text" id="cMan1" name="cMan1" style="width:600px;font-size:24px;" maxlength="32" value="<{$data.record.cMan1}>" /> (32字元)
+                                                    </td>
+                                                  </tr>
+												  <tr>
+                                                    <th><span style="color:#F36;"></span>稿件聯絡人手機：</th>
+                                                    <td>
+                                                        <input type="text" id="cManTel1" name="cManTel1" style="width:600px;font-size:24px;" maxlength="32" value="<{$data.record.cManTel1}>" /> (32字元)
+                                                    </td>
+                                                  </tr>
+												  <tr>
+                                                    <th><span style="color:#F36;"></span>收貨聯絡人：</th>
+                                                    <td>
+                                                        <input type="text" id="cMan2" name="cMan2" style="width:600px;font-size:24px;" maxlength="32" value="<{$data.record.cMan2}>" /> (32字元)
+                                                    </td>
+                                                  </tr>
+												  <tr>
+                                                    <th><span style="color:#F36;"></span>收貨聯絡人手機：</th>
+                                                    <td>
+                                                        <input type="text" id="cManTel2" name="cManTel2" style="width:600px;font-size:24px;" maxlength="32" value="<{$data.record.cManTel2}>" /> (32字元)
+                                                    </td>
+                                                  </tr>
+												  <tr>
+                                                    <th><span style="color:#F36;"></span>付款聯絡人：</th>
+                                                    <td>
+                                                        <input type="text" id="cMan3" name="cMan3" style="width:600px;font-size:24px;" maxlength="32" value="<{$data.record.cMan3}>" /> (32字元)
+                                                    </td>
+                                                  </tr>
+												  <tr>
+                                                    <th><span style="color:#F36;"></span>付款聯絡人手機：</th>
+                                                    <td>
+                                                        <input type="text" id="cManTel3" name="cManTel3" style="width:600px;font-size:24px;" maxlength="32" value="<{$data.record.cManTel3}>" /> (32字元)
+                                                    </td>
+                                                  </tr>
+                                                  <tr>
+                                                    <th><span style="color:#F36;">*</span>狀態：</th>
+                                                    <td>
+                                                        <label><input type="radio" id="status" name="status" value="1" CHECKED />開啟</label>&nbsp;&nbsp;&nbsp;&nbsp;
+														<label><input type="radio" id="status" name="status" value="-1" <{if $data.record.status == -1}>CHECKED<{/if}> />停權</label>
+                                                    </td>
+                                                  </tr>
+                                                  <tr>
+                                                    <th>&nbsp;</th>
+                                                    <td>
+                                                        <span class="btn_org_90"><a href="javascript: checkForm('addFrm');">確定送出</a></span>
+                                                        <span class="btn_org_90"><a href="index.php?op=<{$init.op}>&sub=list">返回列表</a></span>
+                                                    </td>
+                                                  </tr>
+                                                </table>
+                                            </div><!--end .table_style_01 //-->
+                                        </div><!--end .inside_section //-->
+										</form>
+<script type="text/javascript" src="<{$smarty.const.WEB_PATH}>scripts/jquery.twzipcode-1.6.0.min.js"></script>
+<script type="text/javascript">
+var type = '<{$init.op}>';
+var sysMessage = '<{$data.message}>';
+</script>
+<script>
+var result = new Array();
+function checkUser(){
+	if(document.getElementById('username').value.length == 0){
+		document.getElementById('userText').innerHTML = '<font color="#c40000">請先輸入帳號</font>';
+	}else{
+		var url = './ajax-check.php?mode=username&id=<{$init.id}>&value='+document.getElementById('username').value;
+		$.ajax({ url: url, success: function(response){
+			var result = eval("(" + response + ")");
+			if(parseInt(result.data,10) == 99){
+				document.getElementById('userText').innerHTML = '<font color="#F40000">帳號格式錯誤,請確認是否為E-mail</font>';
+			}else if(parseInt(result.data,10) >= 1){
+				document.getElementById('userText').innerHTML = '<font color="#F40000">已被使用</font>';
+			}else{
+				document.getElementById('userText').innerHTML = '<font color="#000000">可以使用</font>';
+			}
+		}});
+	}
+}
+function checkForm(){
+	var message = '';
+	if(document.getElementById('username').value.length == 0){
+		message += "※請輸入會員帳號\r\n";
+	}
+	<{if $init.id > 0}>
+		if(document.getElementById('password').value.length > 0){
+			if(document.getElementById('password').value.length < 6 || document.getElementById('password').value.length > 20){
+				message += "※請輸入密碼長度錯誤\r\n";
+			}else{
+				if(document.getElementById('password').value != document.getElementById('password2').value){
+					message += "※密碼確認錯誤\r\n";
+				}
+			}
+		}
+	<{else}>
+		if(document.getElementById('password').value.length < 6 || document.getElementById('password').value.length > 20){
+			message += "※請輸入密碼長度錯誤\r\n";
+		}else{
+			if(document.getElementById('password').value != document.getElementById('password2').value){
+				message += "※密碼確認錯誤\r\n";
+			}
+		}
+	<{/if}>
+	
+	if(document.getElementById('truename').value.length == 0){
+		message += "※請輸入負責人\r\n";
+	}
+	if(document.getElementById('address').value.length == 0){
+		message += "※請選擇公司地址\r\n";
+	}
+	if(document.getElementById('email').value.length == 0){
+		message += "※請輸入電子郵件\r\n";
+	}
+	if(document.getElementById('tel').value.length == 0){
+		message += "※請輸入公司電話\r\n";
+	}
+	
+
+	if(message == ''){
+		document.addFrm.submit();
+	}else{
+		alert(message);
+	}
+}
+$(document).ready(
+function(){
+	if(sysMessage != ''){
+		alert(sysMessage);
+	}
+	$('#twzipcode').twzipcode({
+		zipcodeSel: '<{$data.record.zipcode}>',
+	});
+}
+);
+</script>
+                                    </div><!--end .main_content //-->
+                                </div>
+                            </div>
+                        </div><!--end .mid //-->
+                    </div><!--end .box_style_01 //-->
+                </div><!--end #content .section //-->
+            </div><!--end #content //-->

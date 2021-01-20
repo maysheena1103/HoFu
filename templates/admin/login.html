@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>管理後台</title>
+<meta name="robots" content="NOINDEX, NOFOLLOW">
+</head>
+<body> <div class="docWidth">
+<form id="loginForm" name="loginForm" method="POST" action="">
+<input type="hidden" name="mode" value="login" />
+<div style="width:500px;height:251px;margin:0 auto;font-size:12px;color:#000000;font-weight:900;">
+<div style="margin:50px 0px 0px 0px;"><img src="../images/admin/login_03.jpg" /></div>
+<div style="float:left;">
+<div style="margin:10px 0px 0px 220px;">
+	管理者帳號：<input type="text" id="login_username" name="login_username" value="" size="14" style="width:100px;" />
+</div>
+<div style="margin:10px 0px 0px 220px;">
+	管理者密碼：<input type="password" id="login_password" name="login_password" value="" size="14" style="width:100px;" />
+</div>
+</div>
+<div style="float:left;">
+<div style="margin:10px 0px 0px 10px;">
+	<input type="button" name="Button" value="登入" onClick="checkForm();" style="height:54px;"/>
+</div>
+</div>
+
+</div>
+</form>
+
+<script type="text/javascript">
+//<![CDATA[
+function checkForm(){
+	var message = '';
+	if(document.getElementById('login_username').value.length == 0){
+		message += '※請輸入帳號\r\n';
+	}
+	if(document.getElementById('login_password').value.length == 0){
+		message += '※請輸入密碼';
+	}
+	if(message == ''){
+		document.loginForm.submit();
+	}else{
+		alert(message);
+		return false;
+	}
+}
+//]]>
+</script>
+
+</div> </body>
+</html>

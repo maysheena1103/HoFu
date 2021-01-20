@@ -1,0 +1,72 @@
+	<link rel="stylesheet" type="text/css" href="css/FrontEnd/stylesheets/account_control.css">
+	<div class="middle">
+		<div class="banner b_a">
+			<div class="spacer"></div>
+			<img class="bann_img float" src="images/member_44.png">
+			<div class="spacer"></div>
+		</div>
+		<!-- banner end -->
+		<div class="blue">
+			<div class="colo_box wrapper">
+				<div class="til">
+					<div class="spacer"></div>
+					<div class="float">MEMBER</div>
+					<div class="size float">會員專區</div>
+					<div class="tag float_r">
+						<{$init.path}>
+					</div>
+					<div class="spacer"></div>
+				</div>
+				<div class="ne_li_bo" style="padding-left:0px;">
+					<div style="width:420px;margin:0 auto;">
+					<table align="center">
+						<tr>
+							<td class="min_t" colspan="3">
+								HI~<{$smarty.cookies.truename}>您好，非常感謝您登入；請選擇您要的動作。
+							</td>
+						</tr>
+						<tr>
+							<td>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								<!--<a href="myData.html">
+									<img src="images/mem_he_54.png">
+									<div class="buto">
+										資料修改
+									</div>
+								</a>-->
+							</td>
+							<td>
+								<a href="upload.html">
+									<img src="images/mem_he_56.png">
+									<div class="buto">
+										檔案上傳區
+									</div>
+								</a>
+							</td>
+							<td>
+								<a href="download.html">
+									<img src="images/mem_he_58.png">
+									<div class="buto">
+										文件下載區
+									</div>
+								</a>
+							</td>
+						</tr>
+						<tr>
+							<td class="min_t" colspan="3">
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+								<input type="button" name="Button" value="登出系統" onClick="javascript: parent.location.href='./index.php?op=login&mode=logout';" style="padding:5px;font-size:18px;" />
+							</td>
+						</tr>
+					</table>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- pink end -->
+		
+	</div>
+	<!-- middle end -->

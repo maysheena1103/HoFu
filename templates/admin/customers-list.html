@@ -1,0 +1,148 @@
+<link href="<{$smarty.const.WEB_ACSS}>inside_style.css" rel="stylesheet" type="text/css" />
+<link href="<{$smarty.const.WEB_ACSS}>tab_style.css" rel="stylesheet" type="text/css" />
+<link href="<{$smarty.const.WEB_ACSS}>btn_style.css" rel="stylesheet" type="text/css" />
+<link href="<{$smarty.const.WEB_ACSS}>table_style.css" rel="stylesheet" type="text/css" />
+            <div id="content">
+                <div class="section">
+                    <div class="box_style_01" style="width:100%">
+                        <div class="top">
+                            <div class="right_bg">
+                                <div class="title"><h2><{$init.optionAry[$init.op].0.menu_title}></h2></div>
+                            </div>
+                        </div><!--end .top //-->
+                        
+                        <div class="mid">
+                            <div class="left_bg">
+                                <div class="right_bg">
+                                    <div class="main_content">
+                                        <div class="tabs_1">
+                                            <ul>
+											<{foreach from=$init.optionAry[$init.op] key=subk item=subv}>
+											<{if $subk > 0}>
+                                                <li><a href="index.php?op=<{$init.op}>&sub=<{$subv.menu_tag}>" <{if $init.sub == $subv.menu_tag}>class="selected"<{/if}>><h3><{$subv.menu_title}></h3></a></li>
+											<{/if}>
+											<{/foreach}>
+                                            </ul>
+                                        </div><!--end .tabs_1 //-->
+                                        
+                                        <div class="inside_section">
+                                            <div class="table_style_01">
+											<form name="searchForm" method="get">
+											<input type="hidden" name="op" value="<{$init.op}>" />
+											<input type="hidden" name="sub" value="<{$init.sub}>" />
+											<input type="hidden" name="st" value="1" />
+                                                <table border="0" cellspacing="0" cellpadding="0">
+                                                  <tr>
+                                                    <th>關鍵字：</th>
+                                                    <td><input id="sv" name="sv" value="<{$init.sv}>" type="text" style="width:200px;" /></td>
+                                                  </tr>
+                                                  <tr>
+                                                    <th>&nbsp;</th>
+                                                    <td>
+                                                        <span class="btn_org_90"><a href="javascript: document.searchForm.submit();">查詢</a></span>
+                                                        <span class="btn_org_90"><a href="index.php?op=<{$init.op}>&sub=<{$init.sub}>">列表</a></span>
+                                                    </td>
+                                                  </tr>
+                                                </table>
+											</form>
+                                            </div><!--end .table_style_01 //-->
+                                        </div><!--end .inside_section //-->
+                                        <form id="delFrm" name="delFrm" method="POST" action="">
+										<input type="hidden" name="mode" value="multiDel" />
+                                        <div class="inside_section">
+                                            <div class="table_style_02">
+                                                <table border="0" cellspacing="0" cellpadding="0">
+                                                  <tr>
+                                                    <th><input type="checkbox" name="all" onClick="CheckAll('multiId[]');" /></th>
+                                                    <th>編號</th>
+													<th>公司資訊1</th>
+													<th>公司資訊2</th>
+                                                    <th>帳號資訊</th>
+                                                    <th>稿件聯絡資訊</th>
+													<th>收貨聯絡資訊</th>
+													<th>付款聯絡資訊</th>
+                                                    <th>狀態</th>
+													<th>修改</th>
+                                                    <th>刪除</th>
+                                                  </tr>
+												  <{foreach from=$data.list key=k item=v}>
+                                                  <tr>
+                                                    <td class="color01"><input type="checkbox" id="multi-<{$v.customers_id}>" name="multiId[]" value="<{$v.customers_id}>" /></td>
+                                                    <td class="color01">
+														<{$v.customers_id}>
+													</td>
+													<td class="color01" style="text-align:left;">
+														公司名：&nbsp;<{$v.truename}><br />
+														負責人：&nbsp;<{$v.truename}><br />
+														電話：&nbsp;<{$v.tel}><br />
+													</td>
+													<td class="color01" style="text-align:left;">
+														傳真：&nbsp;<{$v.fax}><br />
+														信箱：&nbsp;<a href="mailto:<{$v.email}>"><{$v.email}></a><br />
+														<{$v.zipcode}><{$v.county}><{$v.district}><{$v.address}>
+													</td>
+                                                    <td class="color01" style="text-align:left;">
+														帳號：&nbsp;<{$v.username}><br />
+														密碼：&nbsp;<{$v.real_password}>
+													</td>
+                                                    <td class="color01" style="text-align:left;">
+														聯絡人：&nbsp;<{$v.cMan1}><br />
+														手機：&nbsp;<{$v.cManTel1}>
+													</td>
+													<td class="color01" style="text-align:left;">
+														聯絡人：&nbsp;<{$v.cMan2}><br />
+														手機：&nbsp;<{$v.cManTel2}>
+													</td>
+													<td class="color01" style="text-align:left;">
+														聯絡人：&nbsp;<{$v.cMan3}><br />
+														手機：&nbsp;<{$v.cManTel3}>
+													</td>
+                                                    <td class="color01">
+														<{if $v.status > 0}><a href="./index.php?op=<{$init.op}>&sub=<{$init.sub}>&mode=status&id=<{$v.customers_id}>&status=-1"><img src="<{$smarty.const.WEB_AIMG}>icon_yes.png" border="0" /></a>
+														<{else}><a href="./index.php?op=<{$init.op}>&sub=<{$init.sub}>&mode=status&id=<{$v.customers_id}>&status=1"><img src="<{$smarty.const.WEB_AIMG}>icon_no.png" border="0" /></a><{/if}>
+													</td>
+													<td class="color01">
+														<a href="./index.php?op=<{$init.op}>&sub=edit&id=<{$v.customers_id}>"> <img src="<{$smarty.const.WEB_AIMG}>icon_edit.png" /> </a>
+													</td>
+                                                    <td class="color01">
+														<a href="javascript:del(<{$v.customers_id}>);"><img src="<{$smarty.const.WEB_AIMG}>delete_btn.png" /></a>
+													</td>
+                                                  </tr>
+												  <{/foreach}>
+                                                </table>
+                                            </div><!--end .table_style_02 //-->
+											<div style="float:left;"><span class="btn_org_90"><a href="javascript: del('');">刪除項目</a></span></div>
+											<div style="float:right;"></div>
+											<div style="clear:both;"></div>
+                                        </div><!--end .inside_section //-->
+										</form>
+										<div style="width:100%;text-align:center;">
+											<a href="<{$data.page.first}>">首頁</a>&nbsp;&nbsp;
+											<a href="<{$data.page.left}>">上頁</a>&nbsp;&nbsp;
+											<{$data.page.content}>&nbsp;&nbsp;
+											<a href="<{$data.page.right}>">下頁</a>&nbsp;&nbsp;
+											<a href="<{$data.page.last}>">尾頁</a>
+										</div>
+<script>
+<!--
+var sysMessage = '<{$data.message}>';
+var op = '<{$init.op}>';
+var sub = '<{$init.sub}>';
+//-->
+</script>
+<script>
+$(document).ready(
+function(){
+	if(sysMessage != ''){
+		alert(sysMessage);
+	}
+}
+);
+</script>
+                                    </div><!--end .main_content //-->
+                                </div>
+                            </div>
+                        </div><!--end .mid //-->
+                    </div><!--end .box_style_01 //-->
+                </div><!--end #content .section //-->
+            </div><!--end #content //-->

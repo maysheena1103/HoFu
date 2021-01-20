@@ -1,0 +1,95 @@
+@import "compass/reset";
+@import "compass/css3";
+
+/*.b_a
+	{
+		height: 413px;
+	}*/
+.blue
+	{
+		width: 100%;
+		padding-top: 64px;
+		padding-bottom: 255px;
+		background-color: #00a0e9;
+		.tag
+			{
+				color: #000;
+				font-size: 13px;
+				margin-right: 5px;
+				margin-top: -37px;
+				a
+					{
+						color: #000;
+					}
+			}
+		.ne_li_bo
+			{
+				margin-top: 152px;
+				padding-left: 361px;
+				button
+					{
+						width: 82px;
+						height: 81px;
+						margin-left: 12px;
+					}
+
+			}
+		table
+			{
+				margin-bottom: 21px;
+			}
+		td
+			{
+				height: 49px;
+				padding-bottom: 17px;
+			}
+		.te_td
+			{
+				width: 149px;
+				height: 100%;
+				font-size: 15px;
+				color: #fff;
+				
+			}
+		.textbox
+			{
+				width: 244px;
+				height: 100%;
+				padding-left: 15px;
+				font-size: 13px;
+				border: 1px solid #5f5f5f;
+				background-color: #fff;
+			}
+		.min_t
+			{
+				color: #fff;
+				font-size: 13px;
+				line-height: 24px;
+			}
+		
+	}
+
+.colo_box
+	{
+		width: 1320px;
+		
+	}
+.til
+	{
+		height: 57px;
+		font-size: 57px;
+		letter-spacing: 0.5px;
+		color: #fff;
+	}
+.size
+	{
+		font-size: 27px;
+		margin-left: 34px;
+		padding-top: 16px;
+	}
+.setp_te
+	{
+		color: #fff;
+		font-size: 15px;
+		line-height: 34px;
+	}

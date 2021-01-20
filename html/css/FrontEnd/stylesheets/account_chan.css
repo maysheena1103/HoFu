@@ -1,0 +1,199 @@
+/* line 5, ../../../../../../../../Applications/Fire.app/Contents/Resources/lib/ruby/compass_1.0/compass-core-1.0.0/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../../../../../Applications/Fire.app/Contents/Resources/lib/ruby/compass_1.0/compass-core-1.0.0/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../../../../../Applications/Fire.app/Contents/Resources/lib/ruby/compass_1.0/compass-core-1.0.0/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../../../../../Applications/Fire.app/Contents/Resources/lib/ruby/compass_1.0/compass-core-1.0.0/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../../../../../Applications/Fire.app/Contents/Resources/lib/ruby/compass_1.0/compass-core-1.0.0/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../../../../../Applications/Fire.app/Contents/Resources/lib/ruby/compass_1.0/compass-core-1.0.0/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../../../../../Applications/Fire.app/Contents/Resources/lib/ruby/compass_1.0/compass-core-1.0.0/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../../../../../Applications/Fire.app/Contents/Resources/lib/ruby/compass_1.0/compass-core-1.0.0/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../../../../../Applications/Fire.app/Contents/Resources/lib/ruby/compass_1.0/compass-core-1.0.0/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/*.b_a
+	{
+		height: 413px;
+	}*/
+/* line 9, ../sass/account_chan.scss */
+.blue {
+  width: 100%;
+  padding-top: 64px;
+  padding-bottom: 34px;
+  background-color: #00a0e9;
+}
+/* line 15, ../sass/account_chan.scss */
+.blue .tag {
+  color: #000;
+  font-size: 13px;
+  margin-right: 5px;
+  margin-top: -37px;
+}
+/* line 21, ../sass/account_chan.scss */
+.blue .tag a {
+  color: #000;
+}
+/* line 26, ../sass/account_chan.scss */
+.blue .ne_li_bo {
+  margin-top: 37px;
+  padding-left: 290px;
+}
+/* line 30, ../sass/account_chan.scss */
+.blue .ne_li_bo button {
+  width: 93px;
+  height: 28px;
+  line-height: 30px;
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+/* line 40, ../sass/account_chan.scss */
+.blue table {
+  margin-bottom: 21px;
+}
+/* line 44, ../sass/account_chan.scss */
+.blue td {
+  height: 36px;
+  padding-bottom: 8px;
+}
+/* line 49, ../sass/account_chan.scss */
+.blue .te_td {
+  width: 149px;
+  height: 100%;
+  font-size: 15px;
+  color: #fff;
+  letter-spacing: 1.8px;
+}
+/* line 57, ../sass/account_chan.scss */
+.blue .textbox {
+  width: 377px;
+  height: 100%;
+  padding-left: 15px;
+  font-size: 13px;
+  border: 0px;
+}
+/* line 65, ../sass/account_chan.scss */
+.blue .t_bg {
+  background-color: #0093d6;
+  color: #fff;
+}
+/* line 70, ../sass/account_chan.scss */
+.blue .t_bg_a {
+  width: 97px;
+  margin-right: 7px;
+}
+/* line 75, ../sass/account_chan.scss */
+.blue .si_a {
+  width: 337px;
+}
+/* line 79, ../sass/account_chan.scss */
+.blue .t_bg_td {
+  background-color: #61ceff;
+  color: #000;
+}
+/* line 84, ../sass/account_chan.scss */
+.blue .nir {
+  color: #ff0101;
+  font-size: 15px;
+  padding-left: 6px;
+}
+/* line 90, ../sass/account_chan.scss */
+.blue .k_r {
+  width: 526px;
+  height: 28px;
+}
+/* line 95, ../sass/account_chan.scss */
+.blue .not {
+  font-size: 15px;
+  height: 100%;
+  line-height: 28px;
+}
+/* line 101, ../sass/account_chan.scss */
+.blue .bu_a {
+  color: #000;
+  background-color: #fff100;
+  margin-left: 18px;
+}
+/* line 107, ../sass/account_chan.scss */
+.blue .bu_b {
+  color: #fff;
+  background-color: #0080ba;
+}
+
+/* line 115, ../sass/account_chan.scss */
+.colo_box {
+  width: 1320px;
+}
+
+/* line 120, ../sass/account_chan.scss */
+.til {
+  height: 57px;
+  font-size: 57px;
+  letter-spacing: 0.5px;
+  color: #fff;
+}
+
+/* line 127, ../sass/account_chan.scss */
+.size {
+  font-size: 27px;
+  margin-left: 34px;
+  padding-top: 16px;
+}
+
+/* line 133, ../sass/account_chan.scss */
+.setp_te {
+  color: #fff;
+  font-size: 15px;
+  line-height: 34px;
+}

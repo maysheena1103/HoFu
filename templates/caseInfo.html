@@ -1,0 +1,99 @@
+	<link rel="stylesheet" type="text/css" href="css/FrontEnd/stylesheets/case_in.css">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js" ></script> 
+	<script src="scripts/jquery.carouFredSel-6.2.1-packed.js"></script>
+	<script>
+	$(function(){	
+			$(".slider_page").carouFredSel({
+					responsive	: true,
+					scroll  : {
+						duration:1000,
+						timeoutDuration: 3000,
+						fx:"crossfade"
+					},
+					items		: {
+						visible		: 1,
+						height		: "30.96%"
+					},
+					prev : ".moleft",
+					next : ".moright",
+					swipe: {
+							onTouch: true
+					},
+					pagination  : ".pagination",
+			});
+	});			
+	</script>
+	<div class="middle">
+		<div class="banner">
+			<ul class="slider_page">
+			<{foreach from=$init.bannerD key=k item=v}>
+				<li>
+				<{if $v.url != ''}>
+					<a href="<{$v.url}>" title="<{$v.keyword}>"><img src="<{$smarty.const.WEB_UPLOAD}>bigphoto/<{$v.bigphoto1}>" /></a>
+				<{else}>
+					<img class="bann_img" src="<{$smarty.const.WEB_UPLOAD}>bigphoto/<{$v.bigphoto1}>" />
+				<{/if}>
+				</li>
+			<{/foreach}>
+			</ul>
+			<a class="moleft" href="javascript:;"><span><img class="width" src="images/arrow_37.png" height="120" width="49"></span></a>
+			<a class="moright" href="javascript:;"><span><img src="images/arrow_34.png" height="119" width="50"></span></a>
+		</div>
+		<!-- banner end -->
+		<div class="yellow">
+			<div class="colo_box wrapper">
+				<div class="til">
+					<div class="spacer"></div>
+					<div class="float">CASE</div>
+					<div class="size float">作品案例</div>
+					<div class="tag float_r">
+						<{$init.path}>
+					</div>
+					
+					<div class="spacer"></div>
+				</div>
+				<div class="ne_li_bo">
+					<div class="po">
+						<{if $data.old.id > 0}>
+						<button class="n_i_left" onClick="javascript: parent.location.href='<{$init.op}>-<{$data.old.id}>.html';">
+							<img src="images/news_i_79.png">
+						</button>
+						<{/if}>
+						<div class="te_in">
+							<table>
+								<tr>
+									<td class="tit_in_ne">
+										<{$data.record.title}>
+									</td>
+									<td class="time_in_n">
+										發佈日期：<{$data.record.display_date}>
+									</td>
+								</tr>
+								<tr>
+									<td class="nic" colspan="2">
+										客戶名稱：<{$data.record.title2}><br>
+										<{$data.record.description}>
+									</td>
+								</tr>
+								<tr>
+									<td style="height:145px;">
+										<button class="pa_cir" onClick="javascript: parent.location.href='<{$init.op}>.html';">TOP</button>
+									</td>
+								</tr>
+							</table>
+							<!-- <button class="pa_cir">TOP</button> -->
+						</div>
+						<{if $data.new.id > 0}>
+						<button class="n_i_right" onClick="javascript: parent.location.href='<{$init.op}>-<{$data.new.id}>.html';">
+							<img src="images/news_i_82.png">
+						</button>
+						<{/if}>
+					</div>
+				</div>
+				<!-- ne_li_bo end -->
+			</div>
+		</div>
+		<!-- pink end -->
+		
+	</div>
+	<!-- middle end -->

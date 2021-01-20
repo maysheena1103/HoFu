@@ -1,0 +1,164 @@
+<link href="<{$smarty.const.WEB_ACSS}>inside_style.css" rel="stylesheet" type="text/css" />
+<link href="<{$smarty.const.WEB_ACSS}>tab_style.css" rel="stylesheet" type="text/css" />
+<link href="<{$smarty.const.WEB_ACSS}>btn_style.css" rel="stylesheet" type="text/css" />
+<link href="<{$smarty.const.WEB_ACSS}>table_style.css" rel="stylesheet" type="text/css" />
+            <div id="content">
+                <div class="section">
+                    <div class="box_style_01" style="width:100%">
+                        <div class="top">
+                            <div class="right_bg">
+                                <div class="title"><h2><{$init.optionAry[$init.op].0.menu_title}></h2></div>
+                            </div>
+                        </div><!--end .top //-->
+                        
+                        <div class="mid">
+                            <div class="left_bg">
+                                <div class="right_bg">
+                                    <div class="main_content">
+                                        <div class="tabs_1">
+                                            <ul>
+												<li><a href="index.php?op=<{$init.op}>&sub=list" <{if $init.sub == "list"}>class="selected"<{/if}>><h3>管理列表</h3></a></li>
+												<li><a href="index.php?op=<{$init.op}>&sub=edit" <{if $init.sub == "edit"}>class="selected"<{/if}>><h3>新增/修改</h3></a></li>
+                                            </ul>
+                                        </div><!--end .tabs_1 //-->
+										
+                                        <form name="addAdminFrm" method="POST" action="">
+										<input type="hidden" name="mode" value="editAdmin" />
+										<input type="hidden" name="admin_id" value="<{$init.id}>" />
+                                        <div class="inside_section" style="padding-bottom:10px"><span style="color:#F36; font-size:13px;">*星號表示必填項目</span></div><!--end .inside_section //-->
+                                        <div class="inside_section">
+                                            <div class="table_style_01">
+                                                <table border="0" cellspacing="0" cellpadding="0">
+                                                  <tr>
+                                                    <th><span style="color:#F36;">*</span>帳號：</th>
+                                                    <td>
+                                                        <{if $init.id > 0}>
+															<{$data.record.admin_username}>
+															<input type="hidden" id="admin_username" name="admin_username" style="width:300px;font-size:24px;" value="<{$data.record.admin_username}>" maxlength="16" />
+														<{else}>
+														<input type="text" id="admin_username" name="admin_username" style="width:300px;font-size:24px;" value="<{$data.record.admin_username}>" maxlength="16" />
+														&nbsp;&nbsp;<b>(請使用英文或數字組合，4~16個字元長度)</b>
+														<{/if}>
+                                                    </td>
+                                                  </tr>
+                                                  <tr>
+                                                    <th><span style="color:#F36;"></span><{if $init.id > 0}>修改密碼<{else}>密碼<{/if}>：</th>
+                                                    <td>
+                                                        <input type="password" id="password" name="password" value="" style="width:300px;font-size:24px;" maxlength="16" />
+														<{if $init.id > 0}>
+															&nbsp;&nbsp;<font color="#c40000"><b>(若您不希望修改密碼，請勿輸入密碼內容)</b></font>
+														<{else}>
+															&nbsp;&nbsp;<b>(請使用英文或數字組合，4~16個字元長度)</b>
+														<{/if}>
+                                                    </td>
+                                                  </tr>
+												  <tr>
+                                                    <th><span style="color:#F36;"></span>密碼確認：</th>
+                                                    <td>
+                                                        <input type="password" id="password2" name="password2" style="width:300px;font-size:24px;" maxlength="20" />
+                                                    </td>
+                                                  </tr>
+												  <tr>
+                                                    <th></th>
+                                                    <td>
+                                                        <font color="#c40000"><b>若不修改密碼，請勿在密碼欄位填入資訊</b></font>
+                                                    </td>
+                                                  </tr>
+                                                  <tr>
+                                                    <th><span style="color:#F36;">*</span>姓名：</th>
+                                                    <td>
+                                                        <input type="text" id="admin_name" name="admin_name" style="width:300px;font-size:24px;" maxlength="16" value="<{$data.record.admin_name}>" />
+                                                    </td>
+                                                  </tr>
+												  <tr>
+                                                    <th><span style="color:#F36;">*</span>電子信箱：</th>
+                                                    <td>
+                                                        <input type="text" id="admin_email" name="admin_email" style="width:600px;font-size:24px;" maxlength="64" value="<{$data.record.admin_email}>" /><br />
+														<b>(重要資訊將會透過此MAIL傳送給人員，此欄位可不填，系統將不會寄發通知信)</b>
+                                                    </td>
+                                                  </tr>
+												  <tr>
+                                                    <th><span style="color:#F36;">*</span>功能權限：</th>
+                                                    <td>
+                                                        <input type="hidden" id="funcAll" name="funcAll" value="0" />
+														<input type="button" name="Button" value="全選" onClick="CheckAll('func');" style="padding:5px;" />
+														<div style="clear:both;height:10px;"></div>
+														<{foreach from=$menuAry key=k item=v}>
+															<div style="float:left;width:150px;">
+																<label><input type="checkbox" name="func[]" value="<{$v.menu_tag}>" <{if @in_array($v.menu_tag,$data.record.accessAry)}>CHECKED<{/if}> /><{$v.menu_title}></label>
+															</div>
+														<{/foreach}>
+														<div style="clear:both;height:10px;"></div>
+														<!--是否可以查看與編輯商品價格：
+														<label><input type="radio" name="is_show" value="-1" CHECKED />否</label>&nbsp;&nbsp;&nbsp;&nbsp;
+														<label><input type="radio" name="is_show" value="1" <{if $data.record.is_show == 1}>CHECKED<{/if}> />是</label>-->
+                                                    </td>
+                                                  </tr>
+                                                  <tr>
+                                                    <th>&nbsp;</th>
+                                                    <td>
+                                                        <span class="btn_org_90"><a href="javascript: checkForm('addAdminFrm');">確定送出</a></span>
+                                                        <span class="btn_org_90"><a href="index.php?op=<{$init.op}>&sub=list">返回列表</a></span>
+                                                    </td>
+                                                  </tr>
+                                                </table>
+                                            </div><!--end .table_style_01 //-->
+                                        </div><!--end .inside_section //-->
+										</form>
+<script type="text/javascript">
+var type = '<{$init.op}>';
+var sysMessage = '<{$data.message}>';
+</script>
+<script>
+var id = parseInt('<{$init.id}>', 10);
+function checkForm(formName){
+	var message = '';
+	if(document.getElementById('admin_username').value.length < 4 || document.getElementById('admin_username').value.length > 16){
+		message += '※帳號長度不符合\r\n';
+	}
+	if('<{$init.id}>' == '' || (id > 0 && document.getElementById('password').value.length > 0)){
+		if(document.getElementById('password').value.length < 4 || document.getElementById('password').value.length > 16){
+			message += '※密碼長度不符合\r\n';
+		}else{
+			if(document.getElementById('password').value != document.getElementById('password2').value){
+				message += '※確認密碼錯誤\r\n';
+			}
+		}
+	}
+	if(document.getElementById('admin_name').value.length <= 0 || document.getElementById('admin_name').value.length > 12){
+		message += '※姓名長度不符合\r\n';
+	}
+	if(message == ''){
+		document.forms[formName].submit();
+	}else{
+		alert(message);
+	}
+}
+function CheckAll(name){
+	var ck = document.addAdminFrm.elements[name+"[]"];
+	if(document.getElementById(name+'All').value == 0){
+		var flag = true;
+		document.getElementById(name+'All').value = 1;
+	}else{
+		var flag = false;
+		document.getElementById(name+'All').value = 0;
+	}
+	for (var i=0;i<ck.length;i++){
+		ck[i].checked = flag;
+	}
+}
+$(document).ready(
+function(){
+	if(sysMessage != ''){
+		alert(sysMessage);
+	}
+}
+);
+</script>
+                                    </div><!--end .main_content //-->
+                                </div>
+                            </div>
+                        </div><!--end .mid //-->
+                    </div><!--end .box_style_01 //-->
+                </div><!--end #content .section //-->
+            </div><!--end #content //-->

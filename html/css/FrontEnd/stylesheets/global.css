@@ -1,0 +1,247 @@
+@charset "UTF-8";
+/* line 5, ../../../../../../Applications/Fire.app/Contents/Resources/lib/ruby/compass_1.0/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../../../Applications/Fire.app/Contents/Resources/lib/ruby/compass_1.0/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../../../Applications/Fire.app/Contents/Resources/lib/ruby/compass_1.0/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../../../Applications/Fire.app/Contents/Resources/lib/ruby/compass_1.0/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../../../Applications/Fire.app/Contents/Resources/lib/ruby/compass_1.0/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../../../Applications/Fire.app/Contents/Resources/lib/ruby/compass_1.0/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../../../Applications/Fire.app/Contents/Resources/lib/ruby/compass_1.0/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../../../Applications/Fire.app/Contents/Resources/lib/ruby/compass_1.0/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../../../Applications/Fire.app/Contents/Resources/lib/ruby/compass_1.0/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 5, ../sass/global.scss */
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  /*@include background-size(auto 100%);*/
+  /*@include background-size(100% auto);*/
+  font-family: "Microsoft Jhenghei","微軟正黑體";
+  outline: none;
+}
+
+/* line 17, ../sass/global.scss */
+.spacer {
+  clear: both;
+}
+
+/* line 21, ../sass/global.scss */
+.float {
+  float: left;
+}
+
+/* line 25, ../sass/global.scss */
+.float_r {
+  float: right;
+}
+
+/* line 29, ../sass/global.scss */
+.width {
+  width: 100%;
+}
+
+/* line 33, ../sass/global.scss */
+.hidden {
+  display: none;
+}
+
+/* line 37, ../sass/global.scss */
+.wrapper {
+  /*width: 1322px;*/
+  margin: 0px auto;
+  border: 0px;
+  padding: 0px;
+}
+
+/* line 44, ../sass/global.scss */
+.colo_box {
+  /*max-width: 1320px   !important;*/
+  /*width: 1000px   !important;*/
+  width: 1000px   !important;
+}
+
+/* line 53, ../sass/global.scss */
+a {
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+}
+
+/* line 60, ../sass/global.scss */
+body {
+  background-color: #ffffff;
+  min-width: 1001px !important;
+  min-height: 100% !important;
+  /*overflow-y: hidden;*/
+}
+
+/* line 68, ../sass/global.scss */
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  padding: 0px;
+  margin: 0px;
+}
+
+/* line 78, ../sass/global.scss */
+.header {
+  width: 100%;
+  height: 122px;
+  background-image: url(../../../images/header_01.png);
+  background-position: top;
+  background-repeat: repeat-x;
+  background-color: #231815;
+  border-bottom: 4px solid #636363;
+  position: relative;
+  z-index: 1000;
+}
+/* line 89, ../sass/global.scss */
+.header .header_box {
+  width: 966px;
+}
+/* line 93, ../sass/global.scss */
+.header .icon {
+  margin-top: 14px;
+  margin-right: 6px;
+  margin-bottom: 30px;
+}
+/* line 98, ../sass/global.scss */
+.header .icon a {
+  margin-left: 7px;
+}
+/* line 103, ../sass/global.scss */
+.header .menu {
+  width: 966px;
+  color: #4b4644;
+}
+/* line 107, ../sass/global.scss */
+.header .menu .men_a {
+  padding-right: 30px;
+  padding-left: 30px;
+}
+/* line 112, ../sass/global.scss */
+.header .menu .a_line {
+  padding-top: 15px;
+}
+/* line 116, ../sass/global.scss */
+.header .menu .logo {
+  background: #231815;
+  margin-top: -49px;
+  padding: 17px;
+  padding-bottom: 19px;
+  -moz-border-radius: 15px / 15px;
+  -webkit-border-radius: 15px 15px;
+  border-radius: 15px / 15px;
+}
+
+/* line 132, ../sass/global.scss */
+.middle .banner {
+  width: 100%;
+  background-color: #fff;
+  position: relative;
+  -moz-background-size: 100% auto;
+  -o-background-size: 100% auto;
+  -webkit-background-size: 100% auto;
+  background-size: 100% auto;
+}
+/* line 138, ../sass/global.scss */
+.middle .banner .moleft {
+  position: absolute;
+  left: 42px;
+  top: 45%;
+}
+/* line 144, ../sass/global.scss */
+.middle .banner .moright {
+  position: absolute;
+  right: 42px;
+  top: 45%;
+}
+/* line 150, ../sass/global.scss */
+.middle .banner .bann_img {
+  width: 100%;
+  /*margin-top: -11px;*/
+}
+
+/* line 160, ../sass/global.scss */
+.footer {
+  background-color: #231815;
+  width: 100%;
+  height: 134px;
+}
+/* line 165, ../sass/global.scss */
+.footer .footer_box {
+  max-width: 1230px;
+}
+/* line 168, ../sass/global.scss */
+.footer .footer_box a {
+  color: #fff;
+}
+/* line 173, ../sass/global.scss */
+.footer .logo_b {
+  margin-top: 21px;
+  margin-right: 135px;
+}
+/* line 178, ../sass/global.scss */
+.footer .main_bo {
+  margin-top: 38px;
+  color: #fff;
+  font-size: 13px;
+  line-height: 25px;
+  letter-spacing: 0.8px;
+}

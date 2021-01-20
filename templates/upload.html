@@ -1,0 +1,91 @@
+	<link rel="stylesheet" type="text/css" href="css/FrontEnd/stylesheets/account_up.css">
+	<div class="middle">
+		<div class="banner b_a">
+			<div class="spacer"></div>
+			<img class="bann_img float" src="images/member_44.png">
+			<div class="spacer"></div>
+		</div>
+		<!-- banner end -->
+		<div class="blue">
+			<div class="colo_box wrapper">
+				<div class="til">
+					<div class="spacer"></div>
+					<div class="float">MEMBER</div>
+					<div class="size float">會員專區</div>
+					<div class="tag float_r">
+						<{$init.path}>
+					</div>
+					<div class="spacer"></div>
+				</div>
+				<form id="uploadForm" name="uploadForm" method="POST" action="" enctype="multipart/form-data">
+				<input type="hidden" name="mode" value="add" />
+				<div class="ne_li_bo">
+					<table>
+						<tr>
+							<td class="min_t" colspan="3">
+								請先選擇您要上傳的檔案，建議請壓縮檔上傳檔案，請勿上傳中文(壓縮檔內則可以使用中文)
+							</td>
+						</tr>
+						<tr>
+							<td class="te_td">
+								選擇你要上傳的檔案：
+							</td>
+							<td>
+								<input class="textbox" type="file" id="filename" name="filename"> 
+							</td>
+						</tr>
+						<tr>
+							<td class="te_td">
+								選擇你要上傳的檔案：
+							</td>
+							<td>
+								<input class="textbox" type="file" id="filename2" name="filename2"> 
+							</td>
+						</tr>
+						<tr>
+							<td class="te_td">
+								選擇你要上傳的檔案：
+							</td>
+							<td>
+								<input class="textbox" type="file" id="filename3" name="filename3"> 
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2">
+								<button onClick="javascript:checkForm();return false;">
+									上傳
+								</button>
+							</td>
+						</tr>
+					</table>
+
+				</div>
+			</div>
+		</div>
+		<!-- pink end -->
+		
+	</div>
+	<!-- middle end -->
+<script>
+var sysMessage = '<{$init.message}>';
+function checkForm(){
+	var message = '';
+	if(document.getElementById('filename').value.length == 0 && document.getElementById('filename2').value.length == 0 && document.getElementById('filename3').value.length == 0){
+		message += '※請選擇上傳檔案\r\n';
+	}
+	if(message == ''){
+		document.uploadForm.submit();
+	}else{
+		alert(message);
+		return false;
+	}
+}
+$(document).ready(
+function(){
+	if(sysMessage != ''){
+		alert(sysMessage);
+	}
+	
+}
+);
+</script>

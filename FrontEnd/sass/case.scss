@@ -1,0 +1,150 @@
+@import "compass/reset";
+@import "compass/css3";
+
+
+.yellow
+	{
+		width: 100%;
+		padding-top: 64px;
+		padding-bottom: 95px;
+		background-color: #ffde00;
+		.tag
+			{
+				color: #000;
+				font-size: 13px;
+				margin-right: 5px;
+				margin-top: -37px;
+				a
+					{
+						color: #000;
+					}
+			}
+		.option
+			{
+				font-size: 14px;
+				color: #000;
+				height: 30px;
+				line-height: 30px;
+				table
+					{
+						margin-top: 15px;
+					}
+				td
+					{
+						height: 30px;
+					}
+				select
+					{
+						width: 205px;
+						height: 100%;
+						padding-left: 13px;
+						margin-left: 15px;
+						margin-right: 10px;
+						border: 1px solid #c6c6c6;
+					}
+			}
+		.ne_li_bo
+			{
+				margin-top: 24px;
+				height: 1401px;
+				/*max-height: 1401px;*/
+
+			}
+		.pin_news
+			{
+				width: 287px;
+				/*height: 421px;*/
+				margin-bottom: 46px;
+				margin-right: 50px;
+			}
+		.mr
+			{
+				margin-right: 0px;
+			}
+		.new_img
+			{
+				width: 100%;
+				height: 287px;
+			}
+		.new_tes
+			{
+				width: 100%;
+				height: 32px;
+				font-size: 14px;
+				line-height: 38px;
+				background-color: #e4007f;
+				color: #fff;
+				padding-left: 7px;
+			}
+		.new_tim
+			{
+				font-size: 15px;
+				color: #000;
+				height: 30px;
+				line-height: 30px;
+				padding-left: 7px;
+			}
+		.wor_new
+			{
+				font-size: 13px;
+				color: #000;
+				line-height: 24px;
+				padding-left: 7px;
+			}
+	}
+
+.colo_box
+	{
+		width: 1320px;
+		
+	}
+.til
+	{
+		height: 57px;
+		font-size: 57px;
+		letter-spacing: 0.5px;
+		color: #fff;
+	}
+.size
+	{
+		font-size: 27px;
+		margin-left: 34px;
+		padding-top: 16px;
+	}
+.setp_te
+	{
+		color: #fff;
+		font-size: 15px;
+		line-height: 34px;
+	}
+
+/*頁碼*/
+.page
+	{
+		text-align: center;
+		margin-top: 180px;
+		.pa_cir
+			{
+				width: 21px;
+				height: 21px;
+				background-color: #000;
+				color: #fff;
+				text-align: center;
+				line-height: 25px;
+				margin-left: 5px;
+				margin-right: 5px;
+				@include border-radius(10px, 10px);
+				&:hover
+					{
+						background-color: #00a0e9;
+					}
+			}	
+	}
+
+
+
+
+
+
+
+

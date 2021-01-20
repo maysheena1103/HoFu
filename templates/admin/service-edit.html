@@ -1,0 +1,81 @@
+<link href="<{$smarty.const.WEB_ACSS}>inside_style.css" rel="stylesheet" type="text/css" />
+<link href="<{$smarty.const.WEB_ACSS}>tab_style.css" rel="stylesheet" type="text/css" />
+<link href="<{$smarty.const.WEB_ACSS}>btn_style.css" rel="stylesheet" type="text/css" />
+<link href="<{$smarty.const.WEB_ACSS}>table_style.css" rel="stylesheet" type="text/css" />
+            <div id="content">
+                <div class="section">
+                    <div class="box_style_01" style="width:100%">
+                        <div class="top">
+                            <div class="right_bg">
+                                <div class="title"><h2><{$init.optionAry[$init.op].0.menu_title}></h2></div>
+                            </div>
+                        </div><!--end .top //-->
+                        
+                        <div class="mid">
+                            <div class="left_bg">
+                                <div class="right_bg">
+                                    <div class="main_content">
+                                        <div class="tabs_1">
+                                            <ul>
+												<li><a href="index.php?op=<{$init.op}>&sub=list" class="selected"><h3>服務項目</h3></a></li>
+                                            </ul>
+                                        </div><!--end .tabs_1 //-->
+										
+                                        <form name="addFrm" method="POST" action="" enctype="multipart/form-data">
+										<input type="hidden" name="mode" value="editPost" />
+										<input type="hidden" name="id" value="<{$init.id}>" />
+                                        <div class="inside_section" style="padding-bottom:10px"><span style="color:#F36; font-size:13px;">*星號表示必填項目</span></div><!--end .inside_section //-->
+                                        <div class="inside_section">
+                                            <div class="table_style_01">
+                                                <table border="0" cellspacing="0" cellpadding="0">
+												  <tr>
+                                                    <th><span style="color:#F36;"></span>文字介紹：</th>
+                                                    <td>
+                                                        <textarea id="service" name="service" rows="10" cols="80" style="width: 604px; height: 298px"><{$data.record.service}></textarea><br />
+														<span class="TP2">* 請確定游標在編輯器內閃動再開始輸入資料!</span><br>
+														<span>提示：表格可按下滑鼠右鍵，選「欄」 --> 「插入欄」來增加縱向欄位，選「列」 --> 「插入列」來增加橫向列。</span>
+                                                    </td>
+                                                  </tr>
+                                                  <tr>
+                                                    <th>&nbsp;</th>
+                                                    <td>
+                                                        <span class="btn_org_90"><a href="javascript: checkForm('addFrm');">修改資料</a></span>
+                                                    </td>
+                                                  </tr>
+                                                </table>
+                                            </div><!--end .table_style_01 //-->
+                                        </div><!--end .inside_section //-->
+										</form>
+<script src="./ckeditor/ckeditor.js"></script>
+<script type="text/javascript">
+var type = '<{$init.op}>';
+var sysMessage = '<{$data.message}>';
+</script>
+<script>
+var result = new Array();
+var editor1,editor2,editor3;
+function checkForm(formName,rtype){
+	var message = '';
+	if(message == ''){
+		document.forms[formName].submit();
+	}else{
+		alert(message);
+	}
+}
+
+$(document).ready(
+function(){
+	if(sysMessage != ''){
+		alert(sysMessage);
+	}
+	editor1 = CKEDITOR.replace('service');
+}
+);
+</script>
+                                    </div><!--end .main_content //-->
+                                </div>
+                            </div>
+                        </div><!--end .mid //-->
+                    </div><!--end .box_style_01 //-->
+                </div><!--end #content .section //-->
+            </div><!--end #content //-->

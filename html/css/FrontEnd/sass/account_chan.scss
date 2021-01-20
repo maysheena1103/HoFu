@@ -1,0 +1,138 @@
+@import "compass/reset";
+@import "compass/css3";
+
+/*.b_a
+	{
+		height: 413px;
+	}*/
+	
+.blue
+	{
+		width: 100%;
+		padding-top: 64px;
+		padding-bottom: 34px;
+		background-color: #00a0e9;
+		.tag
+			{
+				color: #000;
+				font-size: 13px;
+				margin-right: 5px;
+				margin-top: -37px;
+				a
+					{
+						color: #000;
+					}
+			}
+		.ne_li_bo
+			{
+				margin-top: 37px;
+				padding-left: 290px;
+				button
+					{
+						width: 93px;
+						height: 28px;
+						line-height: 30px;
+						font-size: 13px;
+						letter-spacing: 1px;
+					}
+
+			}
+		table
+			{
+				margin-bottom: 21px;
+			}
+		td
+			{
+				height: 36px;
+				padding-bottom: 8px;
+			}
+		.te_td
+			{
+				width: 149px;
+				height: 100%;
+				font-size: 15px;
+				color: #fff;
+				letter-spacing: 1.8px;
+			}
+		.textbox
+			{
+				width: 377px;
+				height: 100%;
+				padding-left: 15px;
+				font-size: 13px;
+				border: 0px;
+			}
+		.t_bg
+			{
+				background-color: #0093d6;
+				color: #fff;
+			}
+		.t_bg_a
+			{
+				width: 97px;
+				margin-right: 7px;
+			}
+		.si_a
+			{
+				width: 337px;
+			}
+		.t_bg_td
+			{
+				background-color: #61ceff;
+				color: #000;
+			}
+		.nir
+			{
+				color: #ff0101;
+				font-size: 15px;
+				padding-left: 6px;
+			}
+		.k_r
+			{
+				width: 526px;
+				height: 28px;
+			}
+		.not
+			{
+				font-size: 15px;
+				height: 100%;
+				line-height: 28px;
+			}
+		.bu_a
+			{
+				color: #000;
+				background-color: #fff100;
+				margin-left: 18px;
+			}
+		.bu_b
+			{
+				color: #fff;
+				background-color: #0080ba;
+			}
+		
+	}
+
+.colo_box
+	{
+		width: 1320px;
+		
+	}
+.til
+	{
+		height: 57px;
+		font-size: 57px;
+		letter-spacing: 0.5px;
+		color: #fff;
+	}
+.size
+	{
+		font-size: 27px;
+		margin-left: 34px;
+		padding-top: 16px;
+	}
+.setp_te
+	{
+		color: #fff;
+		font-size: 15px;
+		line-height: 34px;
+	}

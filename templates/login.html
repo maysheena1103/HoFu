@@ -1,0 +1,86 @@
+	<link rel="stylesheet" type="text/css" href="css/FrontEnd/stylesheets/account_log.css">
+	<div class="middle">
+		<div class="banner b_a">
+			<div class="spacer"></div>
+			<img class="bann_img float" src="images/member_44.png">
+			<div class="spacer"></div>
+		</div>
+		<!-- banner end -->
+		<div class="blue">
+			<div class="colo_box wrapper">
+				<div class="til">
+					<div class="spacer"></div>
+					<div class="float">MEMBER</div>
+					<div class="size float">會員專區</div>
+					<div class="tag float_r">
+						<{$init.path}>
+					</div>
+					<div class="spacer"></div>
+				</div>
+				<form id="loginForm" name="loginForm" method="POST" action="">
+				<input type="hidden" name="mode" value="login" />
+				<div class="ne_li_bo">
+					<table>
+						<tr>
+							<td class="te_td">
+								輸入您的會員帳號：
+							</td>
+							<td>
+								<input class="textbox" type="text" id="loginUser" name="loginUser"> 
+							</td>
+							<td rowspan="2">
+								<button onClick="javascript:checkLoginForm();return false;">
+									<img src="images/mem_lo_71.png" height="81" width="82">
+								</button>
+							</td>
+						</tr>
+						<tr>
+							<td class="te_td">
+								輸入您的會員密碼：
+							</td>
+							<td>
+								<input class="textbox" type="password" id="loginPass" name="loginPass"> 
+							</td>
+						</tr>
+						<tr>
+							<td class="min_t" colspan="3">
+								※若您沒有會員帳號，請與我們人員作聯繫，我們將會有專人幫您建立資料。<br>
+								※若您是忘記密碼，也請與我們人員聯繫，我們將會有專人幫您查詢密碼。
+							</td>
+						</tr>
+					</table>
+
+				</div>
+				</form>
+			</div>
+		</div>
+		<!-- pink end -->
+		
+	</div>
+	<!-- middle end -->
+<script>
+var sysMessage = '<{$init.message}>';
+function checkLoginForm(){
+	var message = '';
+	if(document.getElementById('loginUser').value.length == 0){
+		message += '※請輸入帳號\r\n';
+	}
+	if(document.getElementById('loginPass').value.length == 0){
+		message += '※請輸入密碼\r\n';
+	}
+	if(message == ''){
+		document.loginForm.submit();
+	}else{
+		alert(message);
+		return false;
+	}
+}
+$(document).ready(
+function(){
+	if(sysMessage != ''){
+		alert(sysMessage);
+	}
+	
+}
+);
+</script>

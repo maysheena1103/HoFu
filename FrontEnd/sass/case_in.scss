@@ -1,0 +1,179 @@
+@import "compass/reset";
+@import "compass/css3";
+
+
+.yellow
+	{
+		width: 100%;
+		padding-top: 64px;
+		padding-bottom: 95px;
+		background-color: #ffde00;
+		.tag
+			{
+				color: #000;
+				font-size: 13px;
+				margin-right: 5px;
+				margin-top: -37px;
+				a
+					{
+						color: #000;
+					}
+			}
+		.option
+			{
+				font-size: 14px;
+				color: #000;
+				height: 30px;
+				line-height: 30px;
+				table
+					{
+						margin-top: 15px;
+					}
+				td
+					{
+						height: 30px;
+					}
+				select
+					{
+						width: 205px;
+						height: 100%;
+						padding-left: 13px;
+						margin-left: 15px;
+						margin-right: 10px;
+						border: 1px solid #c6c6c6;
+					}
+			}
+		.ne_li_bo
+			{
+				margin-top: 58px;
+				max-width: 1300px;
+				width: 100%;
+				min-height: 1507px;
+				background-color: #fff;
+				@include border-radius(8px, 8px);
+				padding-top: 46px;
+				padding-bottom: 20px;
+			}
+		.po
+			{
+				position: relative;
+				width: 100%;
+				min-height: 1507px;
+				
+			}
+		.n_i_left
+			{
+				position: absolute;
+				top: 45%;
+				left: 28px;
+				
+			}
+		.n_i_right
+			{
+				position: absolute;
+				top: 45%;
+				right: 28px;
+			}
+		.te_in
+			{
+				max-width: 1069px;
+				width: 85%;
+				height: 100%;
+				margin-left: 8%;
+				table
+					{
+						width: 100%;
+					}
+				.tit_in_ne
+					{
+						font-size: 20px;
+						color: #000;
+						text-align: left;
+					}
+				.time_in_n
+					{
+						font-size: 15px;
+						text-align: right;
+						padding-right: 7px;
+					}
+				.nic
+					{
+						color: #000;
+						font-size: 15px;
+						line-height: 34px;
+						padding-top: 60px;
+
+					}
+			}
+		.pa_cir
+			{
+				width: 45px;
+				height: 45px;
+				position: absolute;
+				left: 47%;
+				font-size: 15px;
+				background-color: #000;
+				color: #fff;
+				z-index: 10000;
+				text-align: center;
+				line-height: 50px;
+				letter-spacing: 0.5px;
+				@include border-radius(22.5px, 22.5px);
+			}	
+	}
+
+.colo_box
+	{
+		width: 1320px;
+		
+	}
+.til
+	{
+		height: 57px;
+		font-size: 57px;
+		letter-spacing: 0.5px;
+		color: #fff;
+	}
+.size
+	{
+		font-size: 27px;
+		margin-left: 34px;
+		padding-top: 16px;
+	}
+.setp_te
+	{
+		color: #fff;
+		font-size: 15px;
+		line-height: 34px;
+	}
+
+/*頁碼*/
+.page
+	{
+		text-align: center;
+		margin-top: 180px;
+		.pa_cir
+			{
+				width: 21px;
+				height: 21px;
+				background-color: #000;
+				color: #fff;
+				text-align: center;
+				line-height: 25px;
+				margin-left: 5px;
+				margin-right: 5px;
+				@include border-radius(10px, 10px);
+				&:hover
+					{
+						background-color: #00a0e9;
+					}
+			}	
+	}
+
+
+
+
+
+
+
+

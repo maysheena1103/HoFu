@@ -1,0 +1,138 @@
+<link href="<{$smarty.const.WEB_ACSS}>inside_style.css" rel="stylesheet" type="text/css" />
+<link href="<{$smarty.const.WEB_ACSS}>tab_style.css" rel="stylesheet" type="text/css" />
+<link href="<{$smarty.const.WEB_ACSS}>btn_style.css" rel="stylesheet" type="text/css" />
+<link href="<{$smarty.const.WEB_ACSS}>table_style.css" rel="stylesheet" type="text/css" />
+            <div id="content">
+                <div class="section">
+                    <div class="box_style_01" style="width:100%">
+                        <div class="top">
+                            <div class="right_bg">
+                                <div class="title"><h2><{$init.optionAry[$init.op].0.menu_title}></h2></div>
+                            </div>
+                        </div><!--end .top //-->
+                        
+                        <div class="mid">
+                            <div class="left_bg">
+                                <div class="right_bg">
+                                    <div class="main_content">
+                                        <div class="tabs_1">
+                                            <ul>
+											<{foreach from=$init.optionAry[$init.op] key=subk item=subv}>
+											<{if $subk > 0}>
+                                                <li><a href="index.php?op=<{$init.op}>&sub=<{$subv.menu_tag}>" <{if $init.sub == $subv.menu_tag}>class="selected"<{/if}>><h3><{$subv.menu_title}></h3></a></li>
+											<{/if}>
+											<{/foreach}>
+                                            </ul>
+                                        </div><!--end .tabs_1 //-->
+                                        
+                                        <div class="inside_section">
+                                            <div class="table_style_01">
+											<form name="searchForm" method="get">
+											<input type="hidden" name="op" value="<{$init.op}>" />
+											<input type="hidden" name="sub" value="<{$init.sub}>" />
+											<input type="hidden" name="st" value="1" />
+                                                <table border="0" cellspacing="0" cellpadding="0">
+                                                  <tr>
+                                                    <th>選擇區域：</th>
+                                                    <td>
+                                                        <select id="sv" name="sv" onChange="javascript: parent.location.href='index.php?op=<{$init.op}>&sub=<{$init.sub}>&st=1&sv='+this.value">
+															<option value="">全部廣告</option>
+															<option value="A" <{if $init.sv == 'A'}>SELECTED<{/if}>>區域A(寬1920 x 高584)《首頁大圖》</option>
+															<option value="B" <{if $init.sv == 'B'}>SELECTED<{/if}>>區域B(寬1920 x 高584)《關於合富》</option>
+															<option value="C" <{if $init.sv == 'C'}>SELECTED<{/if}>>區域C(寬1920 x 高584)《最新消息》</option>
+															<option value="D" <{if $init.sv == 'D'}>SELECTED<{/if}>>區域D(寬1920 x 高584)《作品案例》</option>
+                                                        </select>
+                                                    </td>
+                                                  </tr>
+                                                  <tr>
+                                                    <th>&nbsp;</th>
+                                                    <td>
+														<{if $init.sv != ''}>
+                                                        <span class="btn_org_90"><a href="index.php?op=<{$init.op}>&sub=edit&area=<{$init.sv}>">新增<{$init.sv}>區廣告</a></span>
+														<{/if}>
+                                                        <span class="btn_org_90"><a href="index.php?op=<{$init.op}>&sub=<{$init.sub}>">返回列表</a></span>
+                                                    </td>
+                                                  </tr>
+                                                </table>
+											</form>
+                                            </div><!--end .table_style_01 //-->
+                                        </div><!--end .inside_section //-->
+                                        <form id="delFrm" name="delFrm" method="POST" action="">
+										<input type="hidden" id="mode" name="mode" value="multiDel" />
+                                        <div class="inside_section">
+                                            <div class="table_style_02">
+                                                <table border="0" cellspacing="0" cellpadding="0">
+                                                  <tr>
+                                                    <th><input type="checkbox" name="all" onClick="CheckAll('multiId[]');" /></th>
+                                                    <th>編號</th>
+                                                    <th>廣告圖片</th>
+                                                    <th>關鍵字</th>
+                                                    <th>連結網址</th>
+                                                    <th>顯示</th>
+													<th>排序</th>
+													<th>修改</th>
+                                                    <th>刪除</th>
+                                                  </tr>
+												  <{foreach from=$data.list key=k item=v}>
+                                                  <tr>
+                                                    <td class="color01"><input type="checkbox" id="multi-<{$v.id}>" name="multiId[]" value="<{$v.id}>" /></td>
+                                                    <td class="color01"><{$v.id}></td>
+                                                    <td class="color01" style="text-align:left;padding-left:20px;">
+														<img src="<{$smarty.const.WEB_UPLOAD}>bigphoto/thumbnail/<{$v.bigphoto1}>" />
+													</td>
+                                                    <td class="color01"><{$v.keyword}></td>
+                                                    <td class="color01"><{$v.url}></td>
+                                                    <td class="color01">
+														<{if $v.status > 0}><a href="./index.php?op=<{$init.op}>&sub=<{$init.sub}>&mode=status&id=<{$v.id}>&status=-1<{if $init.sv != ''}>&sv=<{$init.sv}><{/if}>"><img src="<{$smarty.const.WEB_AIMG}>icon_yes.png" border="0" /></a>
+														<{else}><a href="./index.php?op=<{$init.op}>&sub=<{$init.sub}>&mode=status&id=<{$v.id}>&status=1<{if $init.sv != ''}>&sv=<{$init.sv}><{/if}>"><img src="<{$smarty.const.WEB_AIMG}>icon_no.png" border="0" /></a><{/if}>
+													</td>
+													<td class="color01">
+														<input type="hidden" name="sortBox[]" value="<{$v.id}>" />
+														<input name="sortBox2[]" type="text" value="<{$v.sort}>" size="1" />
+													</td>
+													<td class="color01">
+														<a href="./index.php?op=<{$init.op}>&sub=edit&id=<{$v.id}>"> <img src="<{$smarty.const.WEB_AIMG}>icon_edit.png" /> </a>
+													</td>
+                                                    <td class="color01">
+														<a href="javascript:del(<{$v.id}>);"><img src="<{$smarty.const.WEB_AIMG}>delete_btn.png" /></a>
+													</td>
+                                                  </tr>
+												  <{/foreach}>
+                                                </table>
+                                            </div><!--end .table_style_02 //-->
+											<div style="float:left;"><span class="btn_org_90"><a href="javascript: del('');">刪除項目</a></span></div>
+											<div style="float:right;"><span class="btn_org_90"><a href="javascript: sort();">更新排序</a></span></div>
+											<div style="clear:both;"></div>
+                                        </div><!--end .inside_section //-->
+										</form>
+										<!--<div style="width:100%;text-align:center;">
+											<a href="<{$data.page.first}>">首頁</a>&nbsp;&nbsp;
+											<a href="<{$data.page.left}>">上頁</a>&nbsp;&nbsp;
+											<{$data.page.content}>&nbsp;&nbsp;
+											<a href="<{$data.page.right}>">下頁</a>&nbsp;&nbsp;
+											<a href="<{$data.page.last}>">尾頁</a>
+										</div>-->
+<script>
+<!--
+var sysMessage = '<{$data.message}>';
+var op = '<{$init.op}>';
+var sub = '<{$init.sub}>';
+//-->
+</script>
+<script type="text/javascript" src="<{$smarty.const.WEB_JS}>common.js"></script>
+<script>
+$(document).ready(
+function(){
+	if(sysMessage != ''){
+		alert(sysMessage);
+	}
+}
+);
+</script>
+                                    </div><!--end .main_content //-->
+                                </div>
+                            </div>
+                        </div><!--end .mid //-->
+                    </div><!--end .box_style_01 //-->
+                </div><!--end #content .section //-->
+            </div><!--end #content //-->

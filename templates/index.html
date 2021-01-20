@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<meta charset="utf-8">
+	<title><{$webAry.title}></title>
+	<meta name="description" content="<{$webAry.description}>" />
+	<meta name="keywords" content="<{$webAry.keyword}>" />
+	<link rel="stylesheet" type="text/css" href="css/FrontEnd/stylesheets/global.css">
+	<link rel="stylesheet" type="text/css" href="css/FrontEnd/stylesheets/main.css">
+</head>
+
+<body>
+	<div class="header">
+		<div class="header_box wrapper">
+			<div class="spacer"></div>
+			<div class="icon float_r">
+				<a class="float" href="download.html">
+					<img src="images/icon_05.png">
+				</a>
+				<a class="float" href="upload.html">
+					<img src="images/icon_07.png">
+				</a>
+				<a class="float" href="https://www.facebook.com/hofutechprint?fref=ts">
+					<img src="images/icon_09.png">
+				</a>
+				<a class="float" href="">
+					<img src="images/icon_11.png">
+				</a>
+				<a class="float" href="">
+					<img src="images/icon_11.png">
+				</a>
+			</div>
+			<div class="menu float">
+				<div class="spacer"></div>
+				<a class="men_a float" href="about.html">
+					<img src="images/HOFU_10.png" >
+					<img class="hidden" src="images/HOFU_10_2.png" >
+				</a>
+				<div class="a_line float">/</div>
+				<a class="men_a float" href="news.html">
+					<img src="images/HOFU_12.png" >
+					<img class="hidden" src="images/HOFU_12_2.png" >
+				</a>
+				<div class="a_line float">/</div>
+				<a class="men_a float" href="case.html">
+					<img src="images/HOFU_14.png" >
+					<img class="hidden" src="images/HOFU_14_2.png" >
+				</a>
+				<a class="logo float" href="index.html">
+					<img src="images/logo_16.png">
+				</a>
+				<a class="men_a float" href="login.html">
+					<img src="images/HOFU_17.png" >
+					<img class="hidden" src="images/HOFU_17_2.png" >
+				</a>
+				<div class="a_line float">/</div>
+				<a class="men_a float" href="support.html">
+					<img src="images/HOFU_19.png" >
+					<img class="hidden" src="images/HOFU_19_2.png" >
+				</a>
+				<div class="a_line float">/</div>
+				<a class="men_a float" href="contact.html">
+					<img src="images/HOFU_21.png" >
+					<img class="hidden" src="images/HOFU_21_2.png" >
+				</a>
+				<div class="spacer"></div>
+			</div>
+			<!-- menu end -->
+			<div class="spacer"></div>
+		</div>
+		<!-- wrapper end -->
+	</div>
+	<!-- header end -->
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js" ></script> 
+	<script src="scripts/jquery.carouFredSel-6.2.1-packed.js"></script>
+	<script>
+	$(function(){	
+			$(".slider_page").carouFredSel({
+					responsive	: true,
+					scroll  : {
+						duration:1000,
+						timeoutDuration: 3000,
+						fx:"crossfade"
+					},
+					items		: {
+						visible		: 1,
+						height		: 584
+					},
+					prev : ".moleft",
+					next : ".moright",
+					swipe: {
+							onTouch: true
+					},
+					pagination  : ".pagination",
+			});
+	});			
+	</script>
+	<div class="middle">
+		<div class="banner">
+			<div class="spacer"></div>
+			<img class="bann_img float" src="<{$smarty.const.WEB_UPLOAD}>bigphoto/<{$init.bannerA.0.bigphoto1}>" />
+			<!--<ul class="slider_page">
+			<{foreach from=$init.bannerA key=k item=v}>
+				<li>
+				<{if $v.url != ''}>
+					<a href="<{$v.url}>" title="<{$v.keyword}>"><img src="<{$smarty.const.WEB_UPLOAD}>bigphoto/<{$v.bigphoto1}>" /></a>
+				<{else}>
+					
+				<{/if}>
+				</li>
+			<{/foreach}>
+			</ul>
+			<a class="moleft" href="javascript:;"><span><img class="width" src="images/arrow_37.png" height="120" width="49"></span></a>
+			<a class="moright" href="javascript:;"><span><img src="images/arrow_34.png" height="119" width="50"></span></a>-->
+			<div class="spacer"></div>
+		</div>
+		<!-- banner end -->
+		<div class="yellow">
+			<div class="colo_box wrapper">
+				<div class="til" style="color:#6c6958;">
+					<div class="spacer"></div>
+					<div class="float">CREATIVITY</div>
+					<div class="size float">創造</div>
+					<div class="spacer"></div>
+				</div>
+				<div class="bla">
+					yellow-勇於創新，無限的創造能力
+				</div>
+				<div class="nor" style="color:#6c6958;">
+					對於自己的產品，合富一直追求創新改變，將客人的想法、理念灌注在產品上面，打造屬於客人自己的專屬包材。
+				</div>
+				<img src="images/INDEX_05.png">
+			</div>
+		</div>
+		<!-- yellow end -->
+		<div class="pink">
+			<div class="colo_box wrapper">
+				<div class="til">
+					<div class="spacer"></div>
+					<div class="float">SERVICES</div>
+					<div class="size float">服務</div>
+					<div class="spacer"></div>
+				</div>
+				<div class="bla">
+					red-充滿熱忱，積極活力的服務態度
+				</div>
+				<div class="nor">
+					我們的服務會讓客戶安心，我們的熱忱不會降低，我們不只是廠商，更是您的好朋友。
+				</div>
+				<img src="images/INDEX_08.png">
+			</div>
+		</div>
+		<!-- pink end -->
+		<div class="blue">
+			<div class="colo_box wrapper">
+				<div class="til">
+					<div class="spacer"></div>
+					<div class="float">PROFESSIONAL</div>
+					<div class="size float">專業</div>
+					<div class="spacer"></div>
+				</div>
+				<div class="bla">
+					blue-專業製造，嚴謹的品質控管
+				</div>
+				<div class="nor">
+					在製作上，我們專業的領域會主動幫客戶過濾可能發生的問題，確保客戶要求的品質與我們的一致。
+				</div>
+				<img src="images/INDEX_10.png">
+				</div>
+			</div>
+		</div>
+		<!-- blue end -->
+	</div>
+	<!-- middle end -->
+
+
+
+	<div class="footer"> 
+		<div class="footer_box wrapper">
+			<div class="spacer"></div>
+			<a class="logo_b float" href="index.html">
+				<img src="images/logo_b_51.png" height="76" width="159">
+			</a>
+			<div class="main_bo float">
+				<a href="about.html">
+					關於我們
+				</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+				<a href="news.html">
+					網站消息
+				</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+				<a href="case.html">
+					客戶案例
+				</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+				<a href="login.html">
+					客戶專區
+				</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+				<a href="contact.html">
+					聯絡我們
+				</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+				<a href="index.html">
+					首頁&nbsp;&nbsp;&nbsp;&nbsp;www.hofutechprint.com
+				</a><br>
+				<div>
+					<{$webAry.company}>
+				</div>
+			</div>
+			<div class="spacer"></div>
+		</div>
+		<!-- wrapper end -->
+	</div>
+	<!-- footer end -->
+
+
+
+</body>
+
+
+</html>

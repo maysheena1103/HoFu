@@ -1,0 +1,183 @@
+	<link rel="stylesheet" type="text/css" href="css/FrontEnd/stylesheets/account_chan.css">
+	<div class="middle">
+		<div class="banner b_a">
+			<div class="spacer"></div>
+			<img class="bann_img float" src="images/member_44.png">
+			<div class="spacer"></div>
+		</div>
+		<!-- banner end -->
+		<div class="blue">
+			<div class="colo_box wrapper">
+				<div class="til">
+					<div class="spacer"></div>
+					<div class="float">MEMBER</div>
+					<div class="size float">會員專區</div>
+					<div class="tag float_r">
+						<a href="">首頁</a>  >  
+						<a href="">會員登入</a>
+					</div>
+					<div class="spacer"></div>
+				</div>
+				<form id="addMemberForm" name="addMemberForm" method="POST" action="">
+				<input type="hidden" name="mode" value="edit" />
+				<div class="ne_li_bo">
+					<table>
+						<tr>
+							<td class="te_td">
+								合富會員帳號：
+							</td>
+							<td>
+								<input class="textbox t_bg" type="text" value="<{$data.record.username}>" /> 
+							</td>
+						</tr>
+						<tr>
+							<td class="te_td">
+								負&nbsp;&nbsp;&nbsp;&nbsp;責&nbsp;&nbsp;&nbsp;&nbsp;人 ：
+							</td>
+							<td>
+								<input class="textbox t_bg" type="text" value="<{$data.record.truename}>" /> 
+							</td>
+						</tr>
+						<tr>
+							<td class="te_td">
+								公&nbsp;&nbsp;司&nbsp;&nbsp;地&nbsp;&nbsp;址：
+							</td>
+							<td>
+								<input class="textbox t_bg t_bg_a" type="text" value="<{$data.record.zipcode}>" /> 
+								<input class="textbox t_bg si_a" type="text" value="<{$data.record.county}><{$data.record.district}><{$data.record.address}>" /> 
+							</td>
+						</tr>
+						<tr>
+							<td class="te_td">
+								電&nbsp;&nbsp;子&nbsp;&nbsp;信&nbsp;&nbsp;箱：
+							</td>
+							<td>
+								<input class="textbox t_bg_td" type="text" id="email" name="email" value="<{$data.record.email}>" /> <span class="nir" >*</span>
+							</td>
+						</tr>
+						<tr>
+							<td class="te_td">
+								公&nbsp;&nbsp;司&nbsp;&nbsp;電&nbsp;&nbsp;話：
+							</td>
+							<td>
+								<input class="textbox t_bg_td" type="text" id="tel" name="tel" value="<{$data.record.tel}>" /> <span class="nir" >*</span>
+							</td>
+						</tr>
+						<tr>
+							<td class="te_td">
+								傳&nbsp;&nbsp;真&nbsp;&nbsp;電&nbsp;&nbsp;話：
+							</td>
+							<td>
+								<input class="textbox t_bg_td" type="text" id="fax" name="fax" value="<{$data.record.fax}>" />
+							</td>
+						</tr>
+						<tr>
+							<td class="te_td">
+								稿 件 聯 絡 人：
+							</td>
+							<td>
+								<input class="textbox t_bg_td" type="text" id="cMan1" name="cMan1" value="<{$data.record.cMan1}>" />
+							</td>
+						</tr>
+						<tr>
+							<td class="te_td">
+								稿件聯絡人手機：
+							</td>
+							<td>
+								<input class="textbox t_bg_td" type="text" id="cManTel1" name="cManTel1" value="<{$data.record.cManTel1}>" />
+							</td>
+						</tr>
+						<tr>
+							<td class="te_td">
+								收 貨 聯 絡 人：
+							</td>
+							<td>
+								<input class="textbox t_bg_td" type="text" id="cMan2" name="cMan2" value="<{$data.record.cMan2}>" />
+							</td>
+						</tr>
+						<tr>
+							<td class="te_td">
+								收貨聯絡人手機：
+							</td>
+							<td>
+								<input class="textbox t_bg_td" type="text" id="cManTel2" name="cManTel2" value="<{$data.record.cManTel2}>" />
+							</td>
+						</tr>
+						<tr>
+							<td class="te_td">
+								付 款 聯 絡 人：
+							</td>
+							<td>
+								<input class="textbox t_bg_td" type="text" id="cMan3" name="cMan3" value="<{$data.record.cMan3}>" />
+							</td>
+						</tr>
+						<tr>
+							<td class="te_td">
+								付款聯絡人手機：
+							</td>
+							<td>
+								<input class="textbox t_bg_td" type="text" id="cManTel3" name="cManTel3" value="<{$data.record.cManTel3}>" />
+							</td>
+						</tr>
+					</table>
+					<div class="k_r">
+						<div class="spacer"></div>
+						<div class="not float">
+							※欲更改送貨地址請來電洽詢
+						</div>
+						<button class="bu_a float_r" onClick="javascript: checkForm();">確定送出</button>
+						<button class="bu_b float_r" onClick="javascript: clearForm('addMemberForm');">取修修改</button>
+						<div class="spacer"></div>
+					</div>
+				</div>
+				</form>
+			</div>
+		</div>
+		<!-- pink end -->
+		
+	</div>
+	<!-- middle end -->
+<script>
+var sysMessage = '<{$init.message}>';
+function clearForm(formName) {
+    var formObj = document.forms[formName];
+    var formEl = formObj.elements;
+    for (var i=0; i<formEl.length; i++)
+    {
+        var element = formEl[i];
+        if (element.type == 'submit') { continue; }
+        if (element.type == 'reset') { continue; }
+        if (element.type == 'button') { continue; }
+        if (element.type == 'hidden') { continue; }
+ 
+        if (element.type == 'text') { element.value = ''; }
+        if (element.type == 'textarea') { element.value = ''; }
+        if (element.type == 'checkbox') { element.checked = false; }
+        if (element.type == 'radio') { element.checked = false; }
+        if (element.type == 'select-multiple') { element.selectedIndex = -1; }
+        if (element.type == 'select-one') { element.selectedIndex = -1; }
+    }
+}
+function checkForm(){
+	var message = '';
+	if(document.getElementById('email').value.length == 0){
+		message += "※請輸入電子郵件\r\n";
+	}
+	if(document.getElementById('tel').value.length == 0){
+		message += "※請輸入公司電話\r\n";
+	}
+
+	if(message == ''){
+		document.addMemberForm.submit();
+	}else{
+		alert(message);
+	}
+}
+$(document).ready(
+function(){
+	if(sysMessage != ''){
+		alert(sysMessage);
+	}
+}
+);
+</script>

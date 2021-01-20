@@ -1,0 +1,55 @@
+	<link rel="stylesheet" type="text/css" href="css/FrontEnd/stylesheets/support.css">
+	<div class="middle">
+		<div class="banner">
+			<div class="spacer"></div>
+			<img class="bann_img float" src="images/faq_44.png">
+			<div class="spacer"></div>
+		</div>
+		<!-- banner end -->
+		<div class="blue">
+			<div class="colo_box wrapper">
+				<div class="til">
+					<div class="spacer"></div>
+					<div class="float">FAQ</div>
+					<div class="size float">常見問題</div>
+					<div class="tag float_r">
+						<{$init.path}>
+					</div>
+					<div class="spacer"></div>
+				</div>
+				<div class="ne_li_bo">
+					<div class="spacer"></div>
+					<{foreach from=$data.list key=k item=v}>
+					<a href="<{$init.op}>-<{$v.id}>.html">
+					<div style="float:left;width: 287px;height: 421px;margin-bottom: 46px;<{if ($k+1)%3 != 0}>margin-right: 50px;<{/if}>">
+						<div style="width:287px;height: 287px;">
+						<{if $v.bigphoto1 != ''}>
+							<img class="bann_img" src="<{$smarty.const.WEB_UPLOAD}>bigphoto/<{$v.bigphoto1}>" width="287" height="287">
+						<{else}>
+						<{/if}>
+						</div>
+						<div style="width: 100%;height: 32px;font-size: 14px;line-height: 38px;background-color: #ffde00;color: #000;">
+							<div style="padding-left: 7px;"><{$v.title}></div>
+						</div>
+						<div style="font-size: 15px;color: #fff;height: 30px;line-height: 30px;">
+							<div style="padding-left: 7px;">發佈日期：<{$v.display_date}></div>
+						</div>
+						<div style="font-size: 13px;color: #fff;line-height: 24px;height:72px;word-wrap: break-word;word-break: break-all;">
+							<div style="padding-left: 7px;"><{$v.description}></div>
+						</div>
+					</div>
+					</a>
+					<{if ($k+1)%4 == 0}><div class="spacer"></div><{/if}>
+					<{/foreach}>
+				</div>
+				<!-- 頁碼 -->
+				<div class="page">
+					<{$data.page.content}>
+				</div>
+				<!-- 頁碼 end -->
+			</div>
+		</div>
+		<!-- pink end -->
+		
+	</div>
+	<!-- middle end -->

@@ -1,0 +1,115 @@
+<link href="<{$smarty.const.WEB_ACSS}>inside_style.css" rel="stylesheet" type="text/css" />
+<link href="<{$smarty.const.WEB_ACSS}>tab_style.css" rel="stylesheet" type="text/css" />
+<link href="<{$smarty.const.WEB_ACSS}>btn_style.css" rel="stylesheet" type="text/css" />
+<link href="<{$smarty.const.WEB_ACSS}>table_style.css" rel="stylesheet" type="text/css" />
+            <div id="content">
+                <div class="section">
+                    <div class="box_style_01" style="width:100%">
+                        <div class="top">
+                            <div class="right_bg">
+                                <div class="title"><h2><{$init.optionAry[$init.op].0.menu_title}></h2></div>
+                            </div>
+                        </div><!--end .top //-->
+                        
+                        <div class="mid">
+                            <div class="left_bg">
+                                <div class="right_bg">
+                                    <div class="main_content">
+                                        <div class="tabs_1">
+                                            <ul>
+												<li><a href="index.php?op=<{$init.op}>&sub=edit" class="selected"><h3>網站設定</h3></a></li>
+                                            </ul>
+                                        </div><!--end .tabs_1 //-->
+										
+                                        <form name="addFrm" method="POST" action="" enctype="multipart/form-data">
+										<input type="hidden" name="mode" value="editPost" />
+										<input type="hidden" name="id" value="<{$init.id}>" />
+                                        <div class="inside_section" style="padding-bottom:10px"><span style="color:#F36; font-size:13px;">*星號表示必填項目</span></div><!--end .inside_section //-->
+                                        <div class="inside_section">
+                                            <div class="table_style_01">
+                                                <table border="0" cellspacing="0" cellpadding="0">
+												  <tr>
+                                                    <th><span style="color:#F36;"></span>網站名稱：</th>
+                                                    <td>
+                                                        <input type="text" name="title" id="title" maxlength="255" value="<{$data.record.title}>" style="width:700px;font-size:24px;" />
+                                                    </td>
+                                                  </tr>
+												  <tr>
+                                                    <th><span style="color:#F36;"></span>網站關鍵字：</th>
+                                                    <td>
+                                                        <input type="text" name="keyword" id="keyword" maxlength="255" value="<{$data.record.keyword}>" style="width:700px;font-size:24px;" />
+                                                    </td>
+                                                  </tr>
+												  <tr>
+                                                    <th><span style="color:#F36;"></span>網站描述：</th>
+                                                    <td>
+                                                        <input type="text" name="description" id="description" maxlength="255" value="<{$data.record.description}>" style="width:700px;font-size:24px;" />
+                                                    </td>
+                                                  </tr>
+												  <tr>
+                                                    <th><span style="color:#F36;"></span>下方公司資訊：</th>
+                                                    <td>
+                                                        <textarea id="company" name="company" rows="10" cols="80" style="width: 604px; height: 298px"><{$data.record.company}></textarea><br />
+														<span class="TP2">* 請確定游標在編輯器內閃動再開始輸入資料!</span><br>
+														<span>提示：表格可按下滑鼠右鍵，選「欄」 --> 「插入欄」來增加縱向欄位，選「列」 --> 「插入列」來增加橫向列。</span>
+                                                    </td>
+                                                  </tr>
+												  <tr>
+                                                    <th><span style="color:#F36;"></span>簽名檔：</th>
+                                                    <td>
+                                                        <textarea id="sign" name="sign" rows="10" cols="80" style="width: 604px; height: 298px"><{$data.record.sign}></textarea><br />
+														<span class="TP2">* 請確定游標在編輯器內閃動再開始輸入資料!</span><br>
+														<span>提示：表格可按下滑鼠右鍵，選「欄」 --> 「插入欄」來增加縱向欄位，選「列」 --> 「插入列」來增加橫向列。</span>
+                                                    </td>
+                                                  </tr>
+												  <tr>
+                                                    <th>&nbsp;</th>
+                                                    <td>
+                                                        <{if $init.id > 0}>
+															<span class="btn_org_90"><a href="javascript: checkForm('addFrm');">修改資料</a></span>
+															<span class="btn_org_90"><a href="index.php?op=<{$init.op}>&sub=<{$init.sub}>">重新新增</a></span>
+															<span class="btn_org_90"><a href="index.php?op=<{$init.op}>&sub=list">返回列表</a></span>
+														<{else}>
+															<span class="btn_org_90"><a href="javascript: checkForm('addFrm');">確定送出</a></span>
+															<span class="btn_org_90"><a href="index.php?op=<{$init.op}>&sub=list">返回列表</a></span>
+														<{/if}>
+                                                    </td>
+                                                  </tr>
+                                                </table>
+                                            </div><!--end .table_style_01 //-->
+                                        </div><!--end .inside_section //-->
+										</form>
+<script src="./ckeditor/ckeditor.js"></script>
+<script type="text/javascript">
+var type = '<{$init.op}>';
+var sysMessage = '<{$data.message}>';
+</script>
+<script>
+var result = new Array();
+var editor1,editor2,editor3,editor4;
+function checkForm(formName,rtype){
+	var message = '';
+	if(message == ''){
+		document.forms[formName].submit();
+	}else{
+		alert(message);
+	}
+}
+
+$(document).ready(
+function(){
+	if(sysMessage != ''){
+		alert(sysMessage);
+	}
+	editor1 = CKEDITOR.replace('company',{height:'300px'});
+	editor2 = CKEDITOR.replace('sign',{height:'300px'});
+}
+);
+</script>
+                                    </div><!--end .main_content //-->
+                                </div>
+                            </div>
+                        </div><!--end .mid //-->
+                    </div><!--end .box_style_01 //-->
+                </div><!--end #content .section //-->
+            </div><!--end #content //-->

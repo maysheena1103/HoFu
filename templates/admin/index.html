@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9" />
+<title><{$smarty.const.WEBNAME}>後台管理系統</title>
+<link href="<{$smarty.const.WEB_ACSS}>reset.css" rel="stylesheet" type="text/css" />
+<link href="<{$smarty.const.WEB_ACSS}>main_style.css" rel="stylesheet" type="text/css" />
+<link href="<{$smarty.const.WEB_ACSS}>box_style.css" rel="stylesheet" type="text/css" />
+<link href="<{$smarty.const.WEB_ACSS}>index_style.css" rel="stylesheet" type="text/css" />
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<!--start main nav //-->
+    <script type="text/javascript" src="../js/jquery.ui.potato.menu.min.js"></script>
+	<script type="text/javascript">
+		(function($) {
+			$(document).ready(function(){
+				$('#main_nav').ptMenu();
+			});
+		})(jQuery);
+    </script>
+    <link href="<{$smarty.const.WEB_ACSS}>jquery.ui.potato.menu.css" rel="stylesheet" type="text/css">
+	<script type="text/javascript" src="<{$smarty.const.WEB_JS}>common.js"></script>
+</head>
+
+<body>
+    <div id="wrapper">
+        <div id="container">
+            <div id="header">
+                <!--<div id="logo"><a href="../index.html"><h1><{$smarty.const.WEBNAME}>後台管理系統</h1></a></div><!--end #logo //-->
+                
+                <div id="login_nav">
+                    <span class="userName"><{$smarty.session.admin.name}></span>
+                    <span>，您好！</span>
+                    <span>|</span>
+					<span><a href="../" target="_blank">前台首頁</a></span>
+                    <span>|</span>
+                    <span><a href="./login.php?mode=logout">系統登出</a></span>
+                    <span>|</span>
+                </div><!--end #login_nav //-->
+                
+                <div id="main_nav_position">
+                    <ul id="main_nav"> 
+                        <li><a href="./index.php" class="level_01">首頁</a></li>
+						<li>
+							<a href="#" class="level_01">常用設定</a>
+							<ul>
+								<li><a href="./index.php?op=about&sub=edit">關於我們</a></li>
+								<li><a href="./index.php?op=sop&sub=edit">服務流程</a></li>
+								<li><a href="./index.php?op=web&sub=edit">網站設定</a></li>
+							</ul>
+						</li>
+						<{foreach from=$init.defOption key=k item=v}>
+						<{foreach from=$init.optionAry[$v] key=k2 item=v2}>
+						<{if $v2.menu_tag != 'web' && $v2.menu_tag != 'about' && $v2.menu_tag != 'sop'}>
+							<{if $k2 == 0}>
+								<li><a href="#" class="level_01"><{$v2.menu_title}></a><ul>
+							<{else}>
+								<li><a href="./index.php?op=<{$v}>&sub=<{$v2.menu_tag}>"><{$v2.menu_title}></a></li>
+							<{/if}>
+						<{/if}>
+						<{/foreach}>
+                            </ul>
+                        </li>
+						<{/foreach}>
+                    </ul>
+                </div><!--end #main_nav_position //-->
+            </div><!--end #header //-->
+            
+            <div id="path">
+                <ul>
+                    <li>您目前的位置：</li>
+					<{$init.path}>
+                </ul>
+            </div><!--end #path //-->
+            
+            <{$all.option}>
+        </div><!--end #container //-->
+        <div style="clear:both"></div>
+    </div><!--end #wrapper //-->
+    
+    <div id="footer_wrapper">
+        <div id="footer"><{$smarty.const.WEBNAME}>後台管理系統</div><!--end #footer //-->
+    </div><!--end #footer_wrapper //-->
+</body>
+</html>

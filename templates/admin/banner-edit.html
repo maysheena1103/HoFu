@@ -1,0 +1,131 @@
+<link href="<{$smarty.const.WEB_ACSS}>inside_style.css" rel="stylesheet" type="text/css" />
+<link href="<{$smarty.const.WEB_ACSS}>tab_style.css" rel="stylesheet" type="text/css" />
+<link href="<{$smarty.const.WEB_ACSS}>btn_style.css" rel="stylesheet" type="text/css" />
+<link href="<{$smarty.const.WEB_ACSS}>table_style.css" rel="stylesheet" type="text/css" />
+<link type="text/css" href="<{$smarty.const.WEB_CSS}>custom-theme/jquery-ui-1.8.16.custom.css" rel="stylesheet" />
+<script type="text/javascript" src="<{$smarty.const.WEB_JS}>jquery-ui-1.8.16.custom.min.js"></script>
+<script type="text/javascript" src="<{$smarty.const.WEB_JS}>ui/i18n/jquery.ui.datepicker-zh-TW.js"></script>
+<script type="text/javascript">
+	$(function(){
+		// Datepicker
+		$('#end_date').datepicker({
+			inline: true,
+			defaultDate : '<{$data.record.d_displayDate}>'
+		});
+	});
+</script>
+            <div id="content">
+                <div class="section">
+                    <div class="box_style_01" style="width:100%">
+                        <div class="top">
+                            <div class="right_bg">
+                                <div class="title"><h2><{$init.optionAry[$init.op].0.menu_title}></h2></div>
+                            </div>
+                        </div><!--end .top //-->
+                        
+                        <div class="mid">
+                            <div class="left_bg">
+                                <div class="right_bg">
+                                    <div class="main_content">
+                                        <div class="tabs_1">
+                                            <ul>
+											<{foreach from=$init.optionAry[$init.op] key=subk item=subv}>
+											<{if $subk > 0}>
+                                                <li><a href="index.php?op=<{$init.op}>&sub=<{$subv.menu_tag}>" <{if $init.sub == $subv.menu_tag}>class="selected"<{/if}>><h3><{$subv.menu_title}></h3></a></li>
+											<{/if}>
+											<{/foreach}>
+                                            </ul>
+                                        </div><!--end .tabs_1 //-->
+										
+                                        <form name="addFrm" method="POST" action="" enctype="multipart/form-data">
+										<input type="hidden" name="mode" value="editPost" />
+										<input type="hidden" name="id" value="<{$init.id}>" />
+                                        <div class="inside_section" style="padding-bottom:10px"><span style="color:#F36; font-size:13px;">*星號表示必填項目</span></div><!--end .inside_section //-->
+                                        <div class="inside_section">
+                                            <div class="table_style_01">
+                                                <table border="0" cellspacing="0" cellpadding="0">
+                                                  <tr>
+                                                    <th><span style="color:#F36;">*</span>區域：</th>
+                                                    <td>
+                                                        <label><input type="radio" id="area" name="area" value="A" CHECKED />區域A(寬1920 x 高584)</label>&nbsp;&nbsp;《首頁大圖》<br />
+														<label><input type="radio" id="area" name="area" value="B" <{if $data.record.area == "B" || $smarty.get.area == "B"}>CHECKED<{/if}> />區域B(寬1920 x 高584)</label>&nbsp;&nbsp;《關於合富》<br />
+														<label><input type="radio" id="area" name="area" value="C" <{if $data.record.area == "C" || $smarty.get.area == "C"}>CHECKED<{/if}> />區域C(寬1920 x 高584)</label>&nbsp;&nbsp;《最新消息》<br />
+														<label><input type="radio" id="area" name="area" value="D" <{if $data.record.area == "D" || $smarty.get.area == "D"}>CHECKED<{/if}> />區域D(寬1920 x 高584)</label>&nbsp;&nbsp;《作品案例》<br />
+                                                    </td>
+                                                  </tr>
+                                                  <tr>
+                                                    <th><span style="color:#F36;"></span>圖片：</th>
+                                                    <td>
+                                                        <{if $data.record.bigphoto1 != ''}>
+															<img src="../upload/bigphoto/thumbnail/<{$data.record.bigphoto1}>" /><br />
+														<{/if}>
+														<input type="hidden" name="o_bigphoto1" value="<{$data.record.bigphoto1}>" />
+														<input type="file" name="bigPhoto1" />
+                                                    </td>
+                                                  </tr>
+												  <tr>
+                                                    <th><span style="color:#F36;"></span>圖片標題：</th>
+                                                    <td>
+                                                        <input type="text" name="keyword" id="keyword" maxlength="64" value="<{$data.record.keyword}>" style="font-size:24px;" /> (64字元)
+                                                    </td>
+                                                  </tr>
+												  <tr>
+                                                    <th><span style="color:#F36;"></span>連結：</th>
+                                                    <td>
+                                                        <input type="text" name="url" id="url" value="<{$data.record.url}>" style="width:500px;font-size:24px;" /> (例如: http://tw.yahoo.com/ , <b>請包含http://</b>)
+                                                    </td>
+                                                  </tr>
+												  <tr>
+                                                    <th><span style="color:#F36;"></span>結束日期：</th>
+                                                    <td>
+                                                        <input type="text" name="end_date" id="end_date" value="<{$data.record.end_date}>" style="width:136px;font-size:24px;"> (僅提供記錄用,前台並不會自動下架)
+                                                    </td>
+                                                  </tr>
+                                                  <tr>
+                                                    <th><span style="color:#F36;">*</span>狀態：</th>
+                                                    <td>
+                                                        <label><input type="radio" id="status" name="status" value="1" CHECKED />上線</label>&nbsp;&nbsp;&nbsp;&nbsp;
+														<label><input type="radio" id="status" name="status" value="-1" <{if $data.record.status == -1}>CHECKED<{/if}> />隱藏</label>
+                                                    </td>
+                                                  </tr>
+                                                  <tr>
+                                                    <th>&nbsp;</th>
+                                                    <td>
+                                                        <span class="btn_org_90"><a href="javascript: checkForm('addFrm');">確定送出</a></span>
+                                                        <span class="btn_org_90"><a href="index.php?op=<{$init.op}>&sub=list">返回列表</a></span>
+                                                    </td>
+                                                  </tr>
+                                                </table>
+                                            </div><!--end .table_style_01 //-->
+                                        </div><!--end .inside_section //-->
+										</form>
+<script type="text/javascript">
+var type = '<{$init.op}>';
+var sysMessage = '<{$data.message}>';
+</script>
+<script>
+var result = new Array();
+function checkForm(formName,rtype){
+	var message = '';
+	if(message == ''){
+		document.forms[formName].submit();
+	}else{
+		alert(message);
+	}
+}
+
+$(document).ready(
+function(){
+	if(sysMessage != ''){
+		alert(sysMessage);
+	}
+}
+);
+</script>
+                                    </div><!--end .main_content //-->
+                                </div>
+                            </div>
+                        </div><!--end .mid //-->
+                    </div><!--end .box_style_01 //-->
+                </div><!--end #content .section //-->
+            </div><!--end #content //-->

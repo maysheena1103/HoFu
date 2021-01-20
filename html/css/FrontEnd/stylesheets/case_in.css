@@ -1,0 +1,238 @@
+@charset "UTF-8";
+/* line 5, ../../../../../../Applications/Fire.app/Contents/Resources/lib/ruby/compass_1.0/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../../../Applications/Fire.app/Contents/Resources/lib/ruby/compass_1.0/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../../../Applications/Fire.app/Contents/Resources/lib/ruby/compass_1.0/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../../../Applications/Fire.app/Contents/Resources/lib/ruby/compass_1.0/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../../../Applications/Fire.app/Contents/Resources/lib/ruby/compass_1.0/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../../../Applications/Fire.app/Contents/Resources/lib/ruby/compass_1.0/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../../../Applications/Fire.app/Contents/Resources/lib/ruby/compass_1.0/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../../../Applications/Fire.app/Contents/Resources/lib/ruby/compass_1.0/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../../../Applications/Fire.app/Contents/Resources/lib/ruby/compass_1.0/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 5, ../sass/case_in.scss */
+.yellow {
+  width: 100%;
+  padding-top: 64px;
+  padding-bottom: 95px;
+  background-color: #ffde00;
+}
+/* line 11, ../sass/case_in.scss */
+.yellow .tag {
+  color: #000;
+  font-size: 13px;
+  margin-right: 5px;
+  margin-top: -37px;
+}
+/* line 17, ../sass/case_in.scss */
+.yellow .tag a {
+  color: #000;
+}
+/* line 22, ../sass/case_in.scss */
+.yellow .option {
+  font-size: 14px;
+  color: #000;
+  height: 30px;
+  line-height: 30px;
+}
+/* line 28, ../sass/case_in.scss */
+.yellow .option table {
+  margin-top: 15px;
+}
+/* line 32, ../sass/case_in.scss */
+.yellow .option td {
+  height: 30px;
+}
+/* line 36, ../sass/case_in.scss */
+.yellow .option select {
+  width: 205px;
+  height: 100%;
+  padding-left: 13px;
+  margin-left: 15px;
+  margin-right: 10px;
+  border: 1px solid #c6c6c6;
+}
+/* line 46, ../sass/case_in.scss */
+.yellow .ne_li_bo {
+  margin-top: 58px;
+  max-width: 1300px;
+  width: 100%;
+  min-height: 1507px;
+  background-color: #fff;
+  -moz-border-radius: 8px / 8px;
+  -webkit-border-radius: 8px 8px;
+  border-radius: 8px / 8px;
+  padding-top: 46px;
+  padding-bottom: 20px;
+}
+/* line 57, ../sass/case_in.scss */
+.yellow .po {
+  position: relative;
+  width: 100%;
+  min-height: 1507px;
+}
+/* line 64, ../sass/case_in.scss */
+.yellow .n_i_left {
+  position: absolute;
+  top: 45%;
+  left: 28px;
+}
+/* line 71, ../sass/case_in.scss */
+.yellow .n_i_right {
+  position: absolute;
+  top: 45%;
+  right: 28px;
+}
+/* line 77, ../sass/case_in.scss */
+.yellow .te_in {
+  max-width: 1069px;
+  width: 85%;
+  height: 100%;
+  margin-left: 8%;
+}
+/* line 83, ../sass/case_in.scss */
+.yellow .te_in table {
+  width: 100%;
+}
+/* line 87, ../sass/case_in.scss */
+.yellow .te_in .tit_in_ne {
+  font-size: 20px;
+  color: #000;
+  text-align: left;
+}
+/* line 93, ../sass/case_in.scss */
+.yellow .te_in .time_in_n {
+  font-size: 15px;
+  text-align: right;
+  padding-right: 7px;
+}
+/* line 99, ../sass/case_in.scss */
+.yellow .te_in .nic {
+  color: #000;
+  font-size: 15px;
+  line-height: 34px;
+  padding-top: 60px;
+}
+/* line 108, ../sass/case_in.scss */
+.yellow .pa_cir {
+  width: 45px;
+  height: 45px;
+  position: absolute;
+  left: 47%;
+  font-size: 15px;
+  background-color: #000;
+  color: #fff;
+  z-index: 10000;
+  text-align: center;
+  line-height: 50px;
+  letter-spacing: 0.5px;
+  -moz-border-radius: 22.5px / 22.5px;
+  -webkit-border-radius: 22.5px 22.5px;
+  border-radius: 22.5px / 22.5px;
+}
+
+/* line 125, ../sass/case_in.scss */
+.colo_box {
+  width: 1320px;
+}
+
+/* line 130, ../sass/case_in.scss */
+.til {
+  height: 57px;
+  font-size: 57px;
+  letter-spacing: 0.5px;
+  color: #fff;
+}
+
+/* line 137, ../sass/case_in.scss */
+.size {
+  font-size: 27px;
+  margin-left: 34px;
+  padding-top: 16px;
+}
+
+/* line 143, ../sass/case_in.scss */
+.setp_te {
+  color: #fff;
+  font-size: 15px;
+  line-height: 34px;
+}
+
+/*頁碼*/
+/* line 151, ../sass/case_in.scss */
+.page {
+  text-align: center;
+  margin-top: 180px;
+}
+/* line 155, ../sass/case_in.scss */
+.page .pa_cir {
+  width: 21px;
+  height: 21px;
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  line-height: 25px;
+  margin-left: 5px;
+  margin-right: 5px;
+  -moz-border-radius: 10px / 10px;
+  -webkit-border-radius: 10px 10px;
+  border-radius: 10px / 10px;
+}
+/* line 166, ../sass/case_in.scss */
+.page .pa_cir:hover {
+  background-color: #00a0e9;
+}

@@ -1,0 +1,194 @@
+/* line 5, ../../../../../../../../Applications/Fire.app/Contents/Resources/lib/ruby/compass_1.0/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../../../../../Applications/Fire.app/Contents/Resources/lib/ruby/compass_1.0/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../../../../../Applications/Fire.app/Contents/Resources/lib/ruby/compass_1.0/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../../../../../Applications/Fire.app/Contents/Resources/lib/ruby/compass_1.0/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../../../../../Applications/Fire.app/Contents/Resources/lib/ruby/compass_1.0/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../../../../../Applications/Fire.app/Contents/Resources/lib/ruby/compass_1.0/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../../../../../Applications/Fire.app/Contents/Resources/lib/ruby/compass_1.0/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../../../../../Applications/Fire.app/Contents/Resources/lib/ruby/compass_1.0/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../../../../../Applications/Fire.app/Contents/Resources/lib/ruby/compass_1.0/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+.yellow .tag {
+  color: #000;
+  font-size: 13px;
+  margin-right: 5px;
+  margin-top: -37px;
+}
+/* line 17, ../sass/news.scss */
+.yellow .tag a {
+  color: #000;
+}
+/* line 5, ../sass/about.scss */
+.yellow {
+  width: 100%;
+  padding-top: 64px;
+  padding-bottom: 85px;
+  background-color: #fed700;
+}
+/* line 12, ../sass/about.scss */
+.yellow .ti_tx {
+  font-size: 18px;
+  font-weight: bold;
+  color: #000;
+}
+/* line 18, ../sass/about.scss */
+.yellow .dtable {
+  margin-top: 24px;
+  width: 100%;
+  font-size: 15px;
+}
+/* line 24, ../sass/about.scss */
+.yellow .td_cha {
+  color: #595959;
+  font-size: 15px;
+  line-height: 34px;
+}
+/* line 30, ../sass/about.scss */
+.yellow .post {
+  position: relative;
+  width: 557px;
+  height: 360px;
+  margin-right: 26px;
+}
+/* line 37, ../sass/about.scss */
+.yellow .img_pod {
+  position: absolute;
+  z-index: 100;
+  left: 42px;
+  top: 0px;
+  height: 325px;
+  width: 514px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.54) -5px 5px 10px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.54) -5px 5px 10px;
+  box-shadow: rgba(0, 0, 0, 0.54) -5px 5px 10px;
+}
+/* line 47, ../sass/about.scss */
+.yellow .bl_fi {
+  position: absolute;
+  z-index: 1000;
+  left: 0px;
+  top: 28px;
+  color: #fff;
+  background-color: #000;
+  width: 186px;
+  height: 333px;
+  font-size: 21px;
+  line-height: 20px;
+  padding-top: 18px;
+  padding-left: 20px;
+}
+/* line 62, ../sass/about.scss */
+.yellow .subli {
+  font-size: 16px;
+  line-height: 20px;
+}
+/* line 67, ../sass/about.scss */
+.yellow .marso {
+  width: 100%;
+  font-size: 15px;
+  padding-bottom: 20px;
+}
+/* line 73, ../sass/about.scss */
+.yellow .mar {
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  /* line 73, ../sass/about.scss */
+  .yellow .mar {
+    width: 55%;
+  }
+}
+
+/* line 84, ../sass/about.scss */
+.pink {
+  width: 100%;
+  padding-top: 80px;
+  padding-bottom: 55px;
+  background-color: #e4007f;
+}
+/* line 90, ../sass/about.scss */
+.pink .img_pin_sop {
+  padding-left: 135px;
+  padding-top: 50px;
+}
+
+/* line 97, ../sass/about.scss */
+.colo_box {
+  width: 1320px;
+}
+
+/* line 102, ../sass/about.scss */
+.til {
+  height: 57px;
+  font-size: 57px;
+  letter-spacing: 0.5px;
+  color: #fff;
+}
+
+/* line 109, ../sass/about.scss */
+.size {
+  font-size: 27px;
+  margin-left: 36px;
+  padding-top: 16px;
+}
+
+/* line 115, ../sass/about.scss */
+.setp_te {
+  color: #fff;
+  font-size: 15px;
+  line-height: 34px;
+}

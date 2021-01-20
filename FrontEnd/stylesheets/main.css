@@ -1,0 +1,127 @@
+/* line 5, ../../../../../../Applications/Fire.app/Contents/Resources/lib/ruby/compass_1.0/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../../../Applications/Fire.app/Contents/Resources/lib/ruby/compass_1.0/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../../../Applications/Fire.app/Contents/Resources/lib/ruby/compass_1.0/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../../../Applications/Fire.app/Contents/Resources/lib/ruby/compass_1.0/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../../../Applications/Fire.app/Contents/Resources/lib/ruby/compass_1.0/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../../../Applications/Fire.app/Contents/Resources/lib/ruby/compass_1.0/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../../../Applications/Fire.app/Contents/Resources/lib/ruby/compass_1.0/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../../../Applications/Fire.app/Contents/Resources/lib/ruby/compass_1.0/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../../../Applications/Fire.app/Contents/Resources/lib/ruby/compass_1.0/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 4, ../sass/main.scss */
+.yellow {
+  width: 100%;
+  padding-top: 40px	!important;
+  padding-bottom: 49px;
+  background-color: #fed700;
+}
+
+/* line 11, ../sass/main.scss */
+.pink {
+  width: 100%;
+  padding-top: 40px	!important;
+  padding-bottom: 49px;
+  background-color: #e4007f;
+}
+
+/* line 19, ../sass/main.scss */
+.blue {
+  width: 100%;
+  padding-top: 40px	!important;
+  padding-bottom: 49px;
+  background-color: #00a0e9;
+}
+
+/* line 28, ../sass/main.scss */
+.colo_box {
+  width: 807px   !important;
+}
+
+/* line 34, ../sass/main.scss */
+.til {
+  height: 57px;
+  font-size: 57px;
+  letter-spacing: 0.5px;
+  color: #fff;
+}
+
+/* line 41, ../sass/main.scss */
+.size {
+  font-size: 16px;
+  height: 57px;
+  padding-top: 30px;
+  margin-left: 10px;
+}
+
+/* line 48, ../sass/main.scss */
+.bla {
+  margin-top: 43px;
+  padding-left: 7px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  margin-bottom: 23px;
+  font-size: 22px;
+}
+
+/* line 57, ../sass/main.scss */
+.nor {
+  margin-bottom: 54px;
+  font-size: 16px;
+  padding-left: 7px;
+  color: #fff;
+}

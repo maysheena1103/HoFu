@@ -1,0 +1,167 @@
+<link href="<{$smarty.const.WEB_ACSS}>inside_style.css" rel="stylesheet" type="text/css" />
+<link href="<{$smarty.const.WEB_ACSS}>tab_style.css" rel="stylesheet" type="text/css" />
+<link href="<{$smarty.const.WEB_ACSS}>btn_style.css" rel="stylesheet" type="text/css" />
+<link href="<{$smarty.const.WEB_ACSS}>table_style.css" rel="stylesheet" type="text/css" />
+            <div id="content">
+                <div class="section">
+                    <div class="box_style_01" style="width:100%">
+                        <div class="top">
+                            <div class="right_bg">
+                                <div class="title"><h2><{$init.optionAry[$init.op].0.menu_title}></h2></div>
+                            </div>
+                        </div><!--end .top //-->
+                        
+                        <div class="mid">
+                            <div class="left_bg">
+                                <div class="right_bg">
+                                    <div class="main_content">
+                                        <div class="tabs_1">
+                                            <ul>
+												<li><a href="index.php?op=<{$init.op}>&sub=list"><h3>文章列表</h3></a></li>
+												<li><a href="index.php?op=<{$init.op}>&sub=edit"><h3>新增文章</h3></a></li>
+												<li><a href="index.php?op=<{$init.op}>&sub=cate" class="selected"><h3>分類列表</h3></a></li>
+												<li><a href="index.php?op=<{$init.op}>&sub=cateadd"><h3>新增分類</h3></a></li>
+                                            </ul>
+                                        </div><!--end .tabs_1 //-->
+                                        
+                                        <div class="inside_section">
+                                            <div class="table_style_01">
+											<form name="searchForm" method="get">
+											<input type="hidden" name="op" value="<{$init.op}>" />
+											<input type="hidden" name="sub" value="<{$init.sub}>" />
+											<input type="hidden" name="st" value="2" />
+                                                <table border="0" cellspacing="0" cellpadding="0">
+                                                  <!--<tr>
+                                                    <th>選擇分類：</th>
+                                                    <td>
+														<select id="pid" name="pid" onChange="javascript: parent.location.href='index.php?op=<{$init.op}>&sub=<{$init.sub}>&st=2&pid='+this.value">
+															<option value="0">《顯示全部分類》</option>
+															<{foreach from=$data.cateAry key=k item=v}>
+																<option value="<{$v.categories_id}>" <{if $init.pid == $v.categories_id}>SELECTED<{/if}>><{$v.name}></option>
+															<{/foreach}>
+                                                        </select>
+                                                    </td>
+                                                  </tr>-->
+												  <tr>
+                                                    <th>關鍵字：</th>
+                                                    <td><input id="sv" name="sv" value="<{$init.sv}>" type="text" style="width:200px;" />&nbsp;(可搜尋：分類名稱)</td>
+                                                  </tr>
+                                                  <tr>
+                                                    <th>&nbsp;</th>
+                                                    <td>
+                                                        <span class="btn_org_90"><a href="javascript: document.searchForm.submit();">查詢</a></span>
+                                                        <span class="btn_org_90"><a href="index.php?op=<{$init.op}>&sub=<{$init.sub}>">返回列表</a></span>
+                                                    </td>
+                                                  </tr>
+                                                </table>
+											</form>
+                                            </div><!--end .table_style_01 //-->
+                                        </div><!--end .inside_section //-->
+										<{if $init.pid > 0}>
+										<div><span class="btn_org_90"><a href="javascript: parent.location.href='index.php?op=<{$init.op}>&sub=<{$init.sub}>&pid=<{$data.parent.parent_id}>';">返回上層</a></span></div>
+										<{/if}>
+                                        <form id="delFrm" name="delFrm" method="POST" action="">
+										<input type="hidden" id="mode" name="mode" value="cateDel" />
+                                        <div class="inside_section">
+                                            <div class="table_style_02">
+                                                <table border="0" cellspacing="0" cellpadding="0">
+                                                  <tr>
+                                                    <th><input type="checkbox" name="all" onClick="CheckAll('multiId[]');" /></th>
+                                                    <th>編號</th>
+                                                    <th>上層分類</th>
+                                                    <th>分類名稱</th>
+                                                    <th>顯示</th>
+													<th>排序</th>
+													<th>修改</th>
+                                                    <th>刪除</th>
+                                                  </tr>
+												  <{foreach from=$data.list key=k item=v}>
+                                                  <tr>
+                                                    <td class="color01"><input type="checkbox" id="multi-<{$v.categories_id}>" name="multiId[]" value="<{$v.categories_id}>" /></td>
+                                                    <td class="color01"><{$v.categories_id}></td>
+                                                    <td class="color01"><{$v.pname}></td>
+                                                    <td class="color01" style="text-align:left;padding-left:20px;">
+														<!--<a href="./index.php?op=<{$init.op}>&sub=<{$init.sub}>&pid=<{$v.categories_id}>"><{$v.name}></a>-->
+														<{$v.name}>
+													</td>
+                                                    <td class="color01">
+														<{if $v.status > 0}><a href="./index.php?op=<{$init.op}>&sub=<{$init.sub}>&mode=cstatus&id=<{$v.categories_id}>&status=-1"><img src="<{$smarty.const.WEB_AIMG}>icon_yes.png" border="0" /></a>
+														<{else}><a href="./index.php?op=<{$init.op}>&sub=<{$init.sub}>&mode=cstatus&id=<{$v.categories_id}>&status=1"><img src="<{$smarty.const.WEB_AIMG}>icon_no.png" border="0" /></a><{/if}>
+													</td>
+													<td class="color01">
+														<input type="hidden" name="sortBox[]" value="<{$v.categories_id}>" />
+														<input name="sortBox2[]" type="text" value="<{$v.sort}>" size="1" />
+													</td>
+													<td class="color01">
+														<a href="./index.php?op=<{$init.op}>&sub=cateadd&id=<{$v.categories_id}>"> <img src="<{$smarty.const.WEB_AIMG}>icon_edit.png" /> </a>
+													</td>
+                                                    <td class="color01">
+														<a href="javascript:del(<{$v.categories_id}>);"><img src="<{$smarty.const.WEB_AIMG}>delete_btn.png" /></a>
+													</td>
+                                                  </tr>
+												  <{/foreach}>
+                                                </table>
+                                            </div><!--end .table_style_02 //-->
+											<div style="float:left;"><span class="btn_org_90"><a href="javascript: delCate('');">刪除項目</a></span></div>
+											<div style="float:right;"><span class="btn_org_90"><a href="javascript: sortCate();">更新排序</a></span></div>
+											<div style="clear:both;"></div>
+                                        </div><!--end .inside_section //-->
+										</form>
+										<!--<div style="width:100%;text-align:center;">
+											<a href="<{$data.page.first}>">首頁</a>&nbsp;&nbsp;
+											<a href="<{$data.page.left}>">上頁</a>&nbsp;&nbsp;
+											<{$data.page.content}>&nbsp;&nbsp;
+											<a href="<{$data.page.right}>">下頁</a>&nbsp;&nbsp;
+											<a href="<{$data.page.last}>">尾頁</a>
+										</div>-->
+<script>
+<!--
+var sysMessage = '<{$data.message}>';
+var op = '<{$init.op}>';
+var sub = '<{$init.sub}>';
+//-->
+</script>
+<script type="text/javascript" src="<{$smarty.const.WEB_JS}>common.js"></script>
+<script>
+function delCate(id){
+	var message = '';
+	if(typeof(id) == 'undefined'){message = "操作錯誤!!";}
+	if(message == ''){
+		var flag = confirm("您確定要刪除嗎??");
+		if(flag){
+			if(id != ''){
+				document.getElementById('multi-'+id).checked = true;
+			}
+			document.delFrm.submit();
+		}
+	}else{
+		alert(message);
+	}
+}
+function sortCate(){
+	var message = '';
+	if(message == ''){
+		var flag = confirm("您確定要修改排序嗎??");
+		if(flag){
+			document.getElementById('mode').value = "changeCateSort";
+			document.delFrm.submit();
+		}
+	}else{
+		alert(message);
+	}
+}
+$(document).ready(
+function(){
+	if(sysMessage != ''){
+		alert(sysMessage);
+	}
+}
+);
+</script>
+                                    </div><!--end .main_content //-->
+                                </div>
+                            </div>
+                        </div><!--end .mid //-->
+                    </div><!--end .box_style_01 //-->
+                </div><!--end #content .section //-->
+            </div><!--end #content //-->
